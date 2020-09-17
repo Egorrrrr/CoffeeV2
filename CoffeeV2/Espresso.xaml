@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="CoffeeV2.Espresso"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CoffeeV2"
+             mc:Ignorable="d" 
+             d:DesignHeight="58" d:DesignWidth="92">
+    <Grid>
+        <Grid>
+            <Rectangle Fill="{Binding Path=Background, 
+                           RelativeSource= {RelativeSource Mode=FindAncestor, 
+                                                           AncestorType={x:Type local:Espresso}}}"  Name="Rce"  HorizontalAlignment="Left" Height="58" Stroke="Black" VerticalAlignment="Top" Width="92" Margin="-1,0,0,-10" RadiusX="15" RadiusY="15">
+
+
+
+            </Rectangle>
+            <Label Content="Espresso" HorizontalAlignment="Left" Margin="5,-10,-18,0" VerticalAlignment="Top" Foreground="White" Width="105" FontFamily="MV Boli" IsEnabled="False" FontSize="18"/>
+
+            <Image HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="97" Margin="26,10,-31,-8" Source="kisspng-coffee-espresso-latte-macchiato-cafe-latte-5ac2cb69c7ef90.478860451522715497819.png" IsEnabled="False"/>
+
+        </Grid>
+        <Label Content="25p." HorizontalAlignment="Left" Margin="59,15,-2,0" VerticalAlignment="Top" Foreground="White" Width="35" FontFamily="MV Boli" IsEnabled="False"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="CoffeeV2.Wallet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoffeeV2"
+        mc:Ignorable="d"
+        Name="sd"
+        Title="Wallet" Height="375" Width="578" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="4653.970.gif"/>
+    </Window.Background>
+    <Canvas HorizontalAlignment="Left" Height="375" Margin="-7,0,0,0" VerticalAlignment="Top" Width="585">
+        <Canvas.Background>
+            <ImageBrush ImageSource="1.jpg"/>
+        </Canvas.Background>
+        <Rectangle Fill="#4C131313" Height="44" Stroke="Black" Width="498" MouseDown="Rectangle_MouseDown"/>
+        <Button Content="X" Canvas.Left="498" Width="87" Background="#33000000" Foreground="White" Height="44" BorderBrush="Black" FontSize="30" Click="Button_Click"/>
+        <Image Height="100" Canvas.Left="16" Canvas.Top="135" Width="100" Source="1_Russian_Ruble_Obverse_2016.png" Tag="1" MouseDown="Image_MouseDown"/>
+        <Image Height="111" Canvas.Left="152" Canvas.Top="124" Width="121" Source="2_Russian_Rubles_Obverse_2016.png" Tag="2" MouseDown="Image_MouseDown"/>
+        <Image Height="137" Canvas.Left="292" Canvas.Top="98" Width="147" Source="1028px-Russia-Coin-5-1997-a.png" Tag="5" MouseDown="Image_MouseDown"/>
+        <Image Height="108" Canvas.Left="444" Canvas.Top="127" Width="116" Source="Russia-Coin-10-2009-a.png" Tag="10" MouseDown="Image_MouseDown"/>
+    </Canvas>
+
+</Window>

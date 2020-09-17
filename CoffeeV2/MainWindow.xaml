@@ -1,0 +1,259 @@
+﻿<Window x:Class="CoffeeV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoffeeV2"
+        mc:Ignorable="d"
+        
+        Title="MainWindow" Height="612" Width="389.5" ResizeMode="NoResize" WindowStyle="None" >
+    <Canvas x:Name="cavasmn" HorizontalAlignment="Left" Height="616" VerticalAlignment="Top" Width="407" Margin="-17,0,0,-4" Loaded="cavasmn_Loaded">
+        <Canvas.Background>
+            <ImageBrush ImageSource="95a4ecfc57b6d44754e242c87f6d30c7.jpg"/>
+        </Canvas.Background>
+        <Button x:Name="close" Content="X" Canvas.Left="320" Width="87" Background="#19DDDDDD" Foreground="White" Height="44" FontSize="30" Click="Button_Click"/>
+        <Canvas x:Name="mov" Height="44" Width="320" Background="#26EEEEEE" MouseDown="mov_MouseDown"/>
+        <Rectangle Fill="#FF2C2B2B" Height="264" Canvas.Left="258" RadiusY="7" RadiusX="7" Stroke="Black" Canvas.Top="121" Width="136"/>
+        <Rectangle Fill="#FF303030" Height="128" Canvas.Left="24" Stroke="Black" Canvas.Top="420" Width="218"/>
+        <Rectangle Fill="#FF131313" Height="72" Canvas.Left="89" Stroke="Black" Canvas.Top="448" Width="96" RadiusX="5" RadiusY="5"/>
+        <Slider x:Name="sld" Canvas.Left="264" Canvas.Top="390" Width="130" Maximum="5" SmallChange="1" ValueChanged="Slider_ValueChanged" Height="14"/>
+        <local:Cappuccino   x:Name="Cap" Background="#808080"  Canvas.Left="24" Canvas.Top="120" Tag="t" MouseDown="Drink_MouseDown">
+            <local:Cappuccino.Triggers>
+                <EventTrigger RoutedEvent="UserControl.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="Green" 
+                                    Storyboard.TargetProperty="(local:Cappuccino.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" 
+                                    Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UserControl.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#808080" 
+                                    Storyboard.TargetProperty="(local:Cappuccino.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </local:Cappuccino.Triggers>
+        </local:Cappuccino>
+
+
+        <local:Latte x:Name="Lat" Canvas.Left="150" Canvas.Top="121" Background="#808080" Tag="t" MouseDown="Drink_MouseDown">
+            <local:Latte.Triggers>
+                <EventTrigger RoutedEvent="UserControl.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="Green" 
+                                    Storyboard.TargetProperty="(local:Latte.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" 
+                                    Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UserControl.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#808080" 
+                                    Storyboard.TargetProperty="(local:Latte.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </local:Latte.Triggers>
+        </local:Latte>
+        <local:Mocca x:Name="Moc" Canvas.Left="24" Canvas.Top="191" Tag="t" MouseDown="Drink_MouseDown" Background="#808080" MouseEnter="Moc_MouseEnter">
+            <local:Mocca.Triggers>
+                <EventTrigger RoutedEvent="UserControl.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="Green" 
+                                    Storyboard.TargetProperty="(local:Mocca.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" 
+                                    Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UserControl.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#808080" 
+                                    Storyboard.TargetProperty="(local:Mocca.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </local:Mocca.Triggers>
+        </local:Mocca>
+        <local:Americano x:Name="Amr" Canvas.Left="150" Canvas.Top="192" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown">
+            <local:Americano.Triggers>
+                <EventTrigger RoutedEvent="UserControl.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="Green" 
+                                    Storyboard.TargetProperty="(local:Americano.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" 
+                                    Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UserControl.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#808080" 
+                                    Storyboard.TargetProperty="(local:Americano.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </local:Americano.Triggers>
+
+        </local:Americano>
+        <local:Espresso x:Name="Esp" Canvas.Left="24" Canvas.Top="258" Tag="t" MouseDown="Drink_MouseDown">
+            <local:Espresso.Triggers>
+                <EventTrigger RoutedEvent="UserControl.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="Green" 
+                                    Storyboard.TargetProperty="(local:Espresso.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" 
+                                    Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UserControl.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#808080" 
+                                    Storyboard.TargetProperty="(local:Espresso.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </local:Espresso.Triggers>
+        </local:Espresso>
+        <local:Tea x:Name="Tea" Canvas.Left="150" Canvas.Top="258" Tag="t" MouseDown="Drink_MouseDown">
+            <local:Tea.Triggers>
+                <EventTrigger RoutedEvent="UserControl.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="Green" 
+                                    Storyboard.TargetProperty="(local:Tea.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" 
+                                    Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UserControl.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#808080" 
+                                    Storyboard.TargetProperty="(local:Tea.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </local:Tea.Triggers>
+        </local:Tea>
+        <local:Water x:Name="Wat" Canvas.Left="24" Canvas.Top="326" Tag="t" MouseDown="Drink_MouseDown">
+            <local:Water.Triggers>
+                <EventTrigger RoutedEvent="UserControl.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="Green" 
+                                    Storyboard.TargetProperty="(local:Water.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" 
+                                    Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UserControl.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#808080" 
+                                    Storyboard.TargetProperty="(local:Water.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </local:Water.Triggers>
+        </local:Water>
+        <local:Black x:Name="Blc" Canvas.Left="150" Canvas.Top="327" Tag="t" MouseDown="Drink_MouseDown" >
+            <local:Black.Triggers>
+                <EventTrigger RoutedEvent="UserControl.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="Green" 
+                                    Storyboard.TargetProperty="(local:Black.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" 
+                                    Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UserControl.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#808080" 
+                                    Storyboard.TargetProperty="(local:Black.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </local:Black.Triggers>
+        </local:Black>
+        <Label x:Name="Choice" Content="Напиток:" Canvas.Left="258" Canvas.Top="134" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
+        <Label x:Name="Sugar" Content="Сахар: " Canvas.Left="258" Canvas.Top="356" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
+        <Label x:Name="blnce" Content="Кредит:" Canvas.Left="258" Canvas.Top="198" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
+        <Ellipse Fill="#FF303030" Height="100" Canvas.Left="280" Stroke="Black" Canvas.Top="444" Width="101"/>
+        <Rectangle Fill="Black" Height="17" Canvas.Left="342" Stroke="Black" Canvas.Top="459" Width="5"/>
+        <Rectangle Fill="#FF131313" Height="39" Canvas.Left="305" Stroke="Black" Canvas.Top="485" Width="51" RadiusX="3" RadiusY="3"/>
+        <Button x:Name="wallet" Content="Кошелек" Canvas.Left="298" Width="110" Background="#3331D600" Foreground="White" Height="42" FontSize="20" Canvas.Top="570" RenderTransformOrigin="0.5,0.5" Click="wallet_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.559"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.639"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="#03000000" Height="24" Canvas.Left="305" Stroke="Black" Canvas.Top="456" Width="53" Drop="Rectangle_Drop" DragEnter="Rectangle_DragEnter" AllowDrop="True" />
+        <Button x:Name="cook" Content="Приготовить" Canvas.Left="264" Canvas.Top="242" Width="124" BorderBrush="#00000000" Height="36" Background="#FF0A7C39" Foreground="White" Click="Button_Click_1"/>
+        <Path Panel.ZIndex="100" x:Name="Coffee" Data=" M15,0 L60,0  75,30 0,30  z" Height="32" Stretch="Fill" Stroke="#00000000" Width="26.499" Canvas.Left="119.75" Canvas.Top="470"  RenderTransformOrigin="0.5,0.5" MouseDown="Coffee_MouseDown">
+            <Path.Fill>
+                <SolidColorBrush x:Name="clr"  />
+            </Path.Fill>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+
+        </Path>
+        <Rectangle  x:Name="liquid" Fill="#FF7E4F20" Height="0" Canvas.Left="133" RadiusY="5" RadiusX="5" Stroke="#00000000" Canvas.Top="448" Width="5" Panel.ZIndex="0">
+        </Rectangle>
+
+
+    </Canvas>
+</Window>
