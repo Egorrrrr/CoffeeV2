@@ -304,7 +304,12 @@ namespace CoffeeV2
                 Coffee.BeginAnimation(Path.HeightProperty, enlargeh);
                 Coffee.BeginAnimation(Path.WidthProperty, enlargew);
                 liquid.Height = 0;
-                Coffee.Fill = Brushes.Transparent;
+                ColorAnimation ca = new ColorAnimation();
+                ca.From = Color.FromArgb(255, 251, 165, 100);
+                ca.To = null;
+                ca.Duration = TimeSpan.FromSeconds(0);
+                SolidColorBrush sb = clr;
+                clr.BeginAnimation(SolidColorBrush.ColorProperty, ca);
                 cuptaken = true;
                 cook.Content = "Приготовить";
             }

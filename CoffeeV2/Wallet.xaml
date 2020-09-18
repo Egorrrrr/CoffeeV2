@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CoffeeV2"
         mc:Ignorable="d"
         Name="sd"
-        Title="Wallet" Height="375" Width="578" WindowStyle="None" ResizeMode="NoResize">
+        Title="Wallet" Height="375" Width="578" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="4653.970.gif"/>
     </Window.Background>

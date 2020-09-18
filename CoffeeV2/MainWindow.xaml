@@ -237,7 +237,7 @@
         </Button>
         <Rectangle Fill="#03000000" Height="24" Canvas.Left="305" Stroke="Black" Canvas.Top="456" Width="53" Drop="Rectangle_Drop" DragEnter="Rectangle_DragEnter" AllowDrop="True" />
         <Button x:Name="cook" Content="Приготовить" Canvas.Left="264" Canvas.Top="242" Width="124" BorderBrush="#00000000" Height="36" Background="#FF0A7C39" Foreground="White" Click="Button_Click_1"/>
-        <Path Panel.ZIndex="100" x:Name="Coffee" Data=" M15,0 L60,0  75,30 0,30  z" Height="32" Stretch="Fill" Stroke="#00000000" Width="26.499" Canvas.Left="119.75" Canvas.Top="470"  RenderTransformOrigin="0.5,0.5" MouseDown="Coffee_MouseDown">
+        <Path Panel.ZIndex="100" x:Name="Coffee" Data=" M15,0 L60,0   75,30 0,30  z" Height="32" Stretch="Fill" Stroke="#00000000" Width="26.499" Canvas.Left="119.75" Canvas.Top="470"  RenderTransformOrigin="0.5,0.5" MouseDown="Coffee_MouseDown">
             <Path.Fill>
                 <SolidColorBrush x:Name="clr"  />
             </Path.Fill>
