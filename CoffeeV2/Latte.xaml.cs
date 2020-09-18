@@ -29,11 +29,11 @@ namespace CoffeeV2
             get { return (Brush)GetValue(ColorProperty); }
             set { SetValue(ColorProperty, value); }
         }
-        
+
 
         // Using a DependencyProperty as the backing store for Colr.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ColorProperty =
-            DependencyProperty.Register("Background", typeof(Brush), typeof(Latte), new PropertyMetadata(Brushes.Gray))
+            DependencyProperty.Register("Background", typeof(Brush), typeof(Latte), new PropertyMetadata(Brushes.Gray));
             
     }
 }
