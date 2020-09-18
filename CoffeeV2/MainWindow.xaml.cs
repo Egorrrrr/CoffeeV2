@@ -15,6 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CoffeeV2;
 using System.Timers;
+using Microsoft.Win32;
+
+
 
 namespace CoffeeV2
 {
@@ -34,7 +37,6 @@ namespace CoffeeV2
         {
 
             InitializeComponent();
-            std = Lat.Background;
             mainc = new Machine();
             wl = new Wallet();
 
@@ -65,15 +67,7 @@ namespace CoffeeV2
         public void GoDisable()
         {
             
-            
-            Lat.Background = Brushes.Gray;
-            Cap.Background = Brushes.Gray;
-            Blc.Background = Brushes.Gray;
-            Wat.Background = Brushes.Gray;
-            Tea.Background = Brushes.Gray;
-            Amr.Background = Brushes.Gray;
-            Esp.Background = Brushes.Gray;
-            Moc.Background = Brushes.Gray;
+ 
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -91,59 +85,7 @@ namespace CoffeeV2
         {
             GoDisable();
             UserControl tmp = (UserControl)sender;
-            
-            switch (tmp.Name)
-            {
-                case "Blc":
-                    {
-                        Blc.Background = Brushes.Pink;
-                        mainc.Drink = Drinks.Black;
-                        break;
-                    }
-                case "Moc":
-                    {
-                        Moc.Background = Brushes.Pink;
-                        mainc.Drink = Drinks.Mocca;
-                        break;
-                    }
-                case "Cap":
-                    {
-                        Cap.Background = Brushes.Pink;
-                        mainc.Drink = Drinks.Capuccino;
-                        break;
-                    }
-                case "Amr":
-                    {
-                        Amr.Background = Brushes.Pink;
-                        mainc.Drink = Drinks.Americano;
-                        break;
-                    }
-                case "Esp":
-                    {
-                        Esp.Background = Brushes.Pink;
-                        mainc.Drink = Drinks.Espresso;
-                        break;
-                    }
-                case "Wat":
-                    {
-                        Wat.Background = Brushes.Pink;
-                        mainc.Drink = Drinks.Water;
-                        break;
-                    }
-                case "Lat":
-                    {
-                        Lat.Background = Brushes.Pink;
-                        mainc.Drink = Drinks.Latte;
-                        break;
-                    }
-                case "Tea":
-                    {
-                        Tea.Background = Brushes.Pink;
-                        mainc.Drink = Drinks.Tea;
-                        break;
-                    }
-
-            }
+           
 
             Upd();
             
@@ -271,6 +213,17 @@ namespace CoffeeV2
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog dia = new OpenFileDialog();
+            dia.DefaultExt = ".png";
+            dia.Filter = "Images (.Png)|*.Png";
+
+            if (dia.ShowDialog() == true )
+            {
+                Uri ur = new Uri(dia.FileName);
+                Amr.Drink = new BitmapImage(ur);
+
+            }
+            
             if (mainc.IsOk(out string a) && cuptaken)
             {
                 cuptaken = false;

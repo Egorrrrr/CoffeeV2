@@ -70,10 +70,7 @@ namespace CoffeeV2
 
 
         private Drinks drink;
-        private int beans;
-        private int milk;
         private int sugar;
-        private int sugarstock;
         private int milkneeded;
         private double balance;
         public double Balance
@@ -89,36 +86,8 @@ namespace CoffeeV2
             }
         } 
        
-        public int Beans
-        {
-            set
-            {
-                int tmp = value;
-                if (tmp < 0) throw new Exception("Количество зерен не может быть отрицательным");
-                if (tmp > 10) tmp = 100;
-                beans = tmp;
-                
-            }
-            get
-            {
-                return beans;
-            }
-        }
-        public int Milk
-        {
-            set
-            {
-                int tmp = value;
-                if (tmp < 0) throw new Exception("Количество молока не может быть отрицательным");
-                if (tmp > 10) tmp = 100;
-                milk = tmp;
-                
-            }
-            get
-            {
-                return milk;
-            }
-        }
+       
+        
         public int Sugar
         {
             set
@@ -133,21 +102,7 @@ namespace CoffeeV2
                 return sugar;
             }
         }
-        public int SugarStock
-        {
-            set
-            {
-                int tmp = value;
-                if (tmp < 0) throw new Exception("Количество сахара не может быть отрицательным");
-                if (tmp > 10) tmp = 100;
-                sugarstock = tmp;
-
-            }
-            get
-            {
-                return sugarstock;
-            }
-        }
+        
         public Drinks Drink
         {
             get
@@ -159,11 +114,7 @@ namespace CoffeeV2
                 drink = value;
             }
         }
-        public void Refil()
-        {
-            milk = 100;
-            beans = 100;
-        }
+        
         public bool Ready = false;
         public bool Start(out string error)
         {
@@ -184,9 +135,7 @@ namespace CoffeeV2
         {
             Drink = Drinks.None;
             Sugar = 0;
-            Beans = 100;
-            Milk = 100;
-            SugarStock = 100;
+
         }
         public bool IsOk(out string a)
         {

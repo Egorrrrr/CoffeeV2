@@ -15,11 +15,17 @@
 
 
             </Rectangle>
-            <Label Content="Americano" HorizontalAlignment="Left" Margin="-3,-6,-10,0" VerticalAlignment="Top" Foreground="White" Width="105" FontFamily="MV Boli" IsEnabled="False" FontSize="18"/>
+            <Label Content="{Binding Path=NameCoffee, 
+                           RelativeSource= {RelativeSource Mode=FindAncestor, 
+                                                           AncestorType={x:Type local:Americano}}}" x:Name="Americanodr" HorizontalAlignment="Left" Margin="-3,-6,-10,0" VerticalAlignment="Top" Foreground="White" Width="105" FontFamily="MV Boli" IsEnabled="False" FontSize="18"/>
 
-            <Image HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="61" Margin="21,12,0,-10" Source="IMGBIN_white-coffee-caffè-americano-espresso-tea-png_8Yatd3ht.png" IsEnabled="False"/>
+            <Image x:Name="drnk" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="60" Margin="0,10,0,0" Source="{Binding Path=Drink, 
+                           RelativeSource= {RelativeSource Mode=FindAncestor, 
+                                                           AncestorType={x:Type local:Americano}}}" IsEnabled="False" Stretch="UniformToFill"/>
 
         </Grid>
-        <Label Content="25p." HorizontalAlignment="Left" Margin="57,12,-9,0" VerticalAlignment="Top" Foreground="White" Width="44" FontFamily="MV Boli" IsEnabled="False"/>
+        <Label x:Name="pricec" Content="{Binding Path=Price, 
+                           RelativeSource= {RelativeSource Mode=FindAncestor, 
+                                                           AncestorType={x:Type local:Americano}}}" HorizontalAlignment="Left" Margin="38,12,0,0" VerticalAlignment="Top" Foreground="White" Width="49" FontFamily="MV Boli" IsEnabled="False"/>
     </Grid>
 </UserControl>

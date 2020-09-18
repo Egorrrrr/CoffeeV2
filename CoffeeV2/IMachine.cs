@@ -11,7 +11,6 @@ namespace CoffeeV2
     {
         bool Start(out string error);
 
-        void Refil();
         void Cancel();
         double Balance { get; set; }
         Drinks Drink { get; set; }

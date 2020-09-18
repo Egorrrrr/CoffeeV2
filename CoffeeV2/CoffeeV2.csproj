@@ -210,5 +210,8 @@
   <ItemGroup>
     <Resource Include="Russia-Coin-10-2009-a.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgbin-coffee-latte-espresso-cafe-flat-white-coffe-cup-white-mug-with-espresso-kD5GnuP98wFzDfAPeLb84EmB7_t.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

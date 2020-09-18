@@ -17,83 +17,8 @@
         <Rectangle Fill="#FF303030" Height="128" Canvas.Left="24" Stroke="Black" Canvas.Top="420" Width="218"/>
         <Rectangle Fill="#FF131313" Height="72" Canvas.Left="89" Stroke="Black" Canvas.Top="448" Width="96" RadiusX="5" RadiusY="5"/>
         <Slider x:Name="sld" Canvas.Left="264" Canvas.Top="390" Width="130" Maximum="5" SmallChange="1" ValueChanged="Slider_ValueChanged" Height="14"/>
-        <local:Cappuccino   x:Name="Cap" Background="#808080"  Canvas.Left="24" Canvas.Top="120" Tag="t" MouseDown="Drink_MouseDown">
-            <local:Cappuccino.Triggers>
-                <EventTrigger RoutedEvent="UserControl.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="Green" 
-                                    Storyboard.TargetProperty="(local:Cappuccino.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="HoldEnd" 
-                                    Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="UserControl.MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="#808080" 
-                                    Storyboard.TargetProperty="(local:Cappuccino.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="Stop" 
-                                    Duration="0:0:0.1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </local:Cappuccino.Triggers>
-        </local:Cappuccino>
-
-
-        <local:Latte x:Name="Lat" Canvas.Left="150" Canvas.Top="121" Background="#808080" Tag="t" MouseDown="Drink_MouseDown">
-            <local:Latte.Triggers>
-                <EventTrigger RoutedEvent="UserControl.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="Green" 
-                                    Storyboard.TargetProperty="(local:Latte.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="HoldEnd" 
-                                    Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="UserControl.MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="#808080" 
-                                    Storyboard.TargetProperty="(local:Latte.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="Stop" 
-                                    Duration="0:0:0.1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-
-            </local:Latte.Triggers>
-        </local:Latte>
-        <local:Mocca x:Name="Moc" Canvas.Left="24" Canvas.Top="191" Tag="t" MouseDown="Drink_MouseDown" Background="#808080" MouseEnter="Moc_MouseEnter">
-            <local:Mocca.Triggers>
-                <EventTrigger RoutedEvent="UserControl.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="Green" 
-                                    Storyboard.TargetProperty="(local:Mocca.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="HoldEnd" 
-                                    Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="UserControl.MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="#808080" 
-                                    Storyboard.TargetProperty="(local:Mocca.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="Stop" 
-                                    Duration="0:0:0.1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-
-            </local:Mocca.Triggers>
-        </local:Mocca>
         <local:Americano x:Name="Amr" Canvas.Left="150" Canvas.Top="192" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown">
+
             <local:Americano.Triggers>
                 <EventTrigger RoutedEvent="UserControl.MouseEnter">
                     <BeginStoryboard>
@@ -119,106 +44,6 @@
             </local:Americano.Triggers>
 
         </local:Americano>
-        <local:Espresso x:Name="Esp" Canvas.Left="24" Canvas.Top="258" Tag="t" MouseDown="Drink_MouseDown">
-            <local:Espresso.Triggers>
-                <EventTrigger RoutedEvent="UserControl.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="Green" 
-                                    Storyboard.TargetProperty="(local:Espresso.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="HoldEnd" 
-                                    Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="UserControl.MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="#808080" 
-                                    Storyboard.TargetProperty="(local:Espresso.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="Stop" 
-                                    Duration="0:0:0.1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-
-            </local:Espresso.Triggers>
-        </local:Espresso>
-        <local:Tea x:Name="Tea" Canvas.Left="150" Canvas.Top="258" Tag="t" MouseDown="Drink_MouseDown">
-            <local:Tea.Triggers>
-                <EventTrigger RoutedEvent="UserControl.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="Green" 
-                                    Storyboard.TargetProperty="(local:Tea.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="HoldEnd" 
-                                    Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="UserControl.MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="#808080" 
-                                    Storyboard.TargetProperty="(local:Tea.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="Stop" 
-                                    Duration="0:0:0.1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-
-            </local:Tea.Triggers>
-        </local:Tea>
-        <local:Water x:Name="Wat" Canvas.Left="24" Canvas.Top="326" Tag="t" MouseDown="Drink_MouseDown">
-            <local:Water.Triggers>
-                <EventTrigger RoutedEvent="UserControl.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="Green" 
-                                    Storyboard.TargetProperty="(local:Water.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="HoldEnd" 
-                                    Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="UserControl.MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="#808080" 
-                                    Storyboard.TargetProperty="(local:Water.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="Stop" 
-                                    Duration="0:0:0.1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-
-            </local:Water.Triggers>
-        </local:Water>
-        <local:Black x:Name="Blc" Canvas.Left="150" Canvas.Top="327" Tag="t" MouseDown="Drink_MouseDown" >
-            <local:Black.Triggers>
-                <EventTrigger RoutedEvent="UserControl.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="Green" 
-                                    Storyboard.TargetProperty="(local:Black.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="HoldEnd" 
-                                    Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="UserControl.MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="#808080" 
-                                    Storyboard.TargetProperty="(local:Black.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="Stop" 
-                                    Duration="0:0:0.1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-
-            </local:Black.Triggers>
-        </local:Black>
         <Label x:Name="Choice" Content="Напиток:" Canvas.Left="258" Canvas.Top="134" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
         <Label x:Name="Sugar" Content="Сахар: " Canvas.Left="258" Canvas.Top="356" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
         <Label x:Name="blnce" Content="Кредит:" Canvas.Left="258" Canvas.Top="198" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
@@ -253,6 +78,13 @@
         </Path>
         <Rectangle  x:Name="liquid" Fill="#FF7E4F20" Height="0" Canvas.Left="133" RadiusY="5" RadiusX="5" Stroke="#00000000" Canvas.Top="448" Width="5" Panel.ZIndex="0">
         </Rectangle>
+        <local:Americano x:Name="Amr_Copy" Canvas.Left="150" Canvas.Top="261" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
+        <local:Americano x:Name="Amr_Copy1" Canvas.Left="150" Canvas.Top="327" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
+        <local:Americano x:Name="Amr_Copy2" Canvas.Left="24" Canvas.Top="327" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
+        <local:Americano x:Name="Amr_Copy3" Canvas.Left="24" Canvas.Top="258" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
+        <local:Americano x:Name="Amr_Copy4" Canvas.Left="24" Canvas.Top="192" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
+        <local:Americano x:Name="Amr_Copy5" Canvas.Left="24" Canvas.Top="121" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Americano"/>
+        <local:Americano x:Name="Amr_Copy6" Canvas.Left="150" Canvas.Top="121" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
 
 
     </Canvas>
