@@ -66,7 +66,14 @@ namespace CoffeeV2
 
         public void GoDisable()
         {
-            
+            foreach (var item in FindVisualChildren<Americano>(cavasmn))
+            {
+                if((string)item.Tag == "t")
+                {
+                    Americano a = (Americano)item;
+                    a.Acitve = false;
+                }
+            }
  
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -84,10 +91,8 @@ namespace CoffeeV2
         private void Drink_MouseDown(object sender, MouseButtonEventArgs e)
         {
             GoDisable();
-            UserControl tmp = (UserControl)sender;
-           
-
-            Upd();
+            Americano a = (Americano)sender;
+            a.Acitve = !a.Acitve;
             
             
         }

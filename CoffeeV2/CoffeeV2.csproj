@@ -58,32 +58,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Capuccino.xaml.cs">
-      <DependentUpon>Capuccino.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Latte.xaml.cs">
-      <DependentUpon>Latte.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Mocca.xaml.cs">
-      <DependentUpon>Mocca.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Americano.xaml.cs">
       <DependentUpon>Americano.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Espresso.xaml.cs">
-      <DependentUpon>Espresso.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Tea.xaml.cs">
-      <DependentUpon>Tea.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Wallet.xaml.cs">
       <DependentUpon>Wallet.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Water.xaml.cs">
-      <DependentUpon>Water.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Black.xaml.cs">
-      <DependentUpon>Black.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -99,39 +78,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Capuccino.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Latte.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Mocca.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Americano.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Espresso.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Tea.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Wallet.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Water.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Black.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -212,6 +163,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="imgbin-coffee-latte-espresso-cafe-flat-white-coffe-cup-white-mug-with-espresso-kD5GnuP98wFzDfAPeLb84EmB7_t.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="kisspng-hazardville-water-co-jewett-city-liquid-water-serv-water-glass-5ac99f13c8fb49.2882641815231628998232.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="kisspng-hazardville-water-co-jewett-city-liquid-water-serv-water-glass-5ac99f13f3cd17.0973767715231628999986.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
+
 
 namespace CoffeeV2
 {
@@ -24,15 +26,15 @@ namespace CoffeeV2
         {
             InitializeComponent();
         }
-        public new Brush Background
+        public new Color Background
         {
-            get { return (Brush)GetValue(ColorProperty); }
+            get { return (Color)GetValue(ColorProperty); }
             set { SetValue(ColorProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for Colr.  This enables animation, styling, binding, etc...
         public static  readonly DependencyProperty ColorProperty =
-            DependencyProperty.Register("Background", typeof(Brush), typeof(Americano), new PropertyMetadata(Brushes.Gray));
+            DependencyProperty.Register("Background", typeof(Color), typeof(Americano), new PropertyMetadata(Colors.Gray));
 
         public string GetPrice(string a)
         {
@@ -47,6 +49,7 @@ namespace CoffeeV2
             }
             return a;
         }
+        bool act = false;
 
         public double Price
         {
@@ -87,14 +90,71 @@ namespace CoffeeV2
         public static readonly DependencyProperty NameCoffeeProperty =
             DependencyProperty.Register("NameCoffee", typeof(string), typeof(Americano), new PropertyMetadata(""));
 
+        private void Grid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (!act)
+            {
+                ColorAnimation ca = new ColorAnimation();
+                ca.From = scb.Color;
+                ca.To = Colors.Green;
+                ca.Duration = TimeSpan.FromMilliseconds(200);
+                scb.BeginAnimation(SolidColorBrush.ColorProperty, ca);
+            }
+            scb.Color = Colors.Pink;
 
-     
+        }
+
+        private void Grid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (!act)
+            {
+                ColorAnimation ca = new ColorAnimation();
+                ca.From = scb.Color;
+                ca.To = Colors.Gray;
+                ca.Duration = TimeSpan.FromMilliseconds(200);
+                scb.BeginAnimation(SolidColorBrush.ColorProperty, ca);
+                return;
+            }
+            scb.Color = Colors.Pink;
+            
+        }
 
 
+        public bool Acitve
+        {
+            get
+            {
+                return (bool)GetValue(AcitveProperty);
+            }
+            set 
+            {
+                if (value)
+                {
+                    ColorAnimation ca = new ColorAnimation();
+                    ca.From = scb.Color;
+                    ca.To = Colors.Pink;
+                    ca.Duration = TimeSpan.FromMilliseconds(200);
+                    scb.BeginAnimation(SolidColorBrush.ColorProperty, ca);
+                    act = true;
+                }
+                else
+                {
 
+                    scb.Color = Colors.Gray;
+                    ColorAnimation ca = new ColorAnimation();
+                    ca.From = scb.Color;
+                    ca.To = Colors.Gray;
+                    ca.Duration = TimeSpan.FromMilliseconds(200);
+                    scb.BeginAnimation(SolidColorBrush.ColorProperty, ca);
+                    act = false;
+                }
+                SetValue(AcitveProperty, value); 
+            }
+        }
 
-
-
+        // Using a DependencyProperty as the backing store for Acitve.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty AcitveProperty =
+            DependencyProperty.Register("Acitve", typeof(bool), typeof(Americano), new PropertyMetadata(false));
 
 
     }

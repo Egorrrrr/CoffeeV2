@@ -6,26 +6,26 @@
              xmlns:local="clr-namespace:CoffeeV2"
              mc:Ignorable="d" 
              d:DesignHeight="58" d:DesignWidth="92">
-    <Grid>
+    <Grid Margin="0,0,0,-10" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
         <Grid>
-            <Rectangle Fill="{Binding Path=Background, 
+            <Rectangle   Name="Rce"  HorizontalAlignment="Left" Height="67" Stroke="Black" VerticalAlignment="Top" Width="95" Margin="-1,0,-2,0" RadiusX="15" RadiusY="15">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="scb" Color="{Binding Path=Background, 
                            RelativeSource= {RelativeSource Mode=FindAncestor, 
-                                                           AncestorType={x:Type local:Americano}}}"  Name="Rce"  HorizontalAlignment="Left" Height="58" Stroke="Black" VerticalAlignment="Top" Width="92" Margin="-1,0,0,-10" RadiusX="15" RadiusY="15">
-
-
-
+                                                           AncestorType={x:Type local:Americano}}}"/>
+                </Rectangle.Fill>
             </Rectangle>
             <Label Content="{Binding Path=NameCoffee, 
                            RelativeSource= {RelativeSource Mode=FindAncestor, 
                                                            AncestorType={x:Type local:Americano}}}" x:Name="Americanodr" HorizontalAlignment="Left" Margin="-3,-6,-10,0" VerticalAlignment="Top" Foreground="White" Width="105" FontFamily="MV Boli" IsEnabled="False" FontSize="18"/>
 
-            <Image x:Name="drnk" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="60" Margin="0,10,0,0" Source="{Binding Path=Drink, 
+            <Image x:Name="drnk" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="59" Margin="4,22,0,-8" Source="{Binding Path=Drink, 
                            RelativeSource= {RelativeSource Mode=FindAncestor, 
                                                            AncestorType={x:Type local:Americano}}}" IsEnabled="False" Stretch="UniformToFill"/>
 
         </Grid>
         <Label x:Name="pricec" Content="{Binding Path=Price, 
                            RelativeSource= {RelativeSource Mode=FindAncestor, 
-                                                           AncestorType={x:Type local:Americano}}}" HorizontalAlignment="Left" Margin="38,12,0,0" VerticalAlignment="Top" Foreground="White" Width="49" FontFamily="MV Boli" IsEnabled="False"/>
+                                                           AncestorType={x:Type local:Americano}}}" HorizontalAlignment="Left" Margin="48,13,-5,0" VerticalAlignment="Top" Foreground="White" Width="49" FontFamily="MV Boli" IsEnabled="False" Panel.ZIndex="33" FontSize="15"/>
     </Grid>
 </UserControl>

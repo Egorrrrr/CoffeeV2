@@ -17,32 +17,7 @@
         <Rectangle Fill="#FF303030" Height="128" Canvas.Left="24" Stroke="Black" Canvas.Top="420" Width="218"/>
         <Rectangle Fill="#FF131313" Height="72" Canvas.Left="89" Stroke="Black" Canvas.Top="448" Width="96" RadiusX="5" RadiusY="5"/>
         <Slider x:Name="sld" Canvas.Left="264" Canvas.Top="390" Width="130" Maximum="5" SmallChange="1" ValueChanged="Slider_ValueChanged" Height="14"/>
-        <local:Americano x:Name="Amr" Canvas.Left="150" Canvas.Top="192" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown">
-
-            <local:Americano.Triggers>
-                <EventTrigger RoutedEvent="UserControl.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="Green" 
-                                    Storyboard.TargetProperty="(local:Americano.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="HoldEnd" 
-                                    Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="UserControl.MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation To="#808080" 
-                                    Storyboard.TargetProperty="(local:Americano.Background).(SolidColorBrush.Color)" 
-                                    FillBehavior="Stop" 
-                                    Duration="0:0:0.1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-
-            </local:Americano.Triggers>
-
+        <local:Americano x:Name="Amr" Canvas.Left="150" Canvas.Top="193" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" Drink="latte.png" NameCoffee="Latte">
         </local:Americano>
         <Label x:Name="Choice" Content="Напиток:" Canvas.Left="258" Canvas.Top="134" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
         <Label x:Name="Sugar" Content="Сахар: " Canvas.Left="258" Canvas.Top="356" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
@@ -78,13 +53,13 @@
         </Path>
         <Rectangle  x:Name="liquid" Fill="#FF7E4F20" Height="0" Canvas.Left="133" RadiusY="5" RadiusX="5" Stroke="#00000000" Canvas.Top="448" Width="5" Panel.ZIndex="0">
         </Rectangle>
-        <local:Americano x:Name="Amr_Copy" Canvas.Left="150" Canvas.Top="261" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
-        <local:Americano x:Name="Amr_Copy1" Canvas.Left="150" Canvas.Top="327" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
-        <local:Americano x:Name="Amr_Copy2" Canvas.Left="24" Canvas.Top="327" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
-        <local:Americano x:Name="Amr_Copy3" Canvas.Left="24" Canvas.Top="258" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
-        <local:Americano x:Name="Amr_Copy4" Canvas.Left="24" Canvas.Top="192" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
-        <local:Americano x:Name="Amr_Copy5" Canvas.Left="24" Canvas.Top="121" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Americano"/>
-        <local:Americano x:Name="Amr_Copy6" Canvas.Left="150" Canvas.Top="121" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown"/>
+        <local:Americano x:Name="Amr_Copy" Canvas.Left="150" Canvas.Top="266" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" Drink="kisspng-hazardville-water-co-jewett-city-liquid-water-serv-water-glass-5ac99f13f3cd17.0973767715231628999986.png" NameCoffee="Water"/>
+        <local:Americano x:Name="Amr_Copy1" Canvas.Left="150" Canvas.Top="339" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Tea" Drink="pngfind.com-tea-png-482019.png"/>
+        <local:Americano x:Name="Amr_Copy2" Canvas.Left="24" Canvas.Top="339" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Espresso" Drink="kisspng-coffee-espresso-latte-macchiato-cafe-latte-5ac2cb69c7ef90.478860451522715497819.png"/>
+        <local:Americano x:Name="Amr_Copy3" Canvas.Left="24" Canvas.Top="266" Height="60" Width="92" Tag="t" MouseDown="Drink_MouseDown" Drink="kisspng-coffee-tea-cappuccino-cafe-deciliter-black-coffee-5a993d3cd60264.4841130515199921248766.png" NameCoffee="Black"/>
+        <local:Americano x:Name="Amr_Copy4" Canvas.Left="24" Canvas.Top="193" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Mocaccino" Drink="IMGBIN_coffee-latte-espresso-cafe-flat-white-png_fL9ULZAB.png"/>
+        <local:Americano x:Name="Amr_Copy5" Canvas.Left="24" Canvas.Top="121" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Americano" Drink="IMGBIN_white-coffee-caffè-americano-espresso-tea-png_8Yatd3ht.png" OverridesDefaultStyle="True"/>
+        <local:Americano x:Name="Amr_Copy6" Canvas.Left="150" Canvas.Top="121" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Cappuccino" Drink="pngegg.png"/>
 
 
     </Canvas>
