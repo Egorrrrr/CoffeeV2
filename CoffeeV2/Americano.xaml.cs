@@ -22,6 +22,24 @@ namespace CoffeeV2
     /// </summary>
     public partial class Americano : UserControl
     {
+        public enum TypeC
+        {
+            Coffee,
+            Tea,
+            Other
+        }
+
+        public TypeC Type
+        {
+            get { return (TypeC)GetValue(MyPropertyProperty); }
+            set { SetValue(MyPropertyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MyPropertyProperty =
+            DependencyProperty.Register("Type", typeof(TypeC), typeof(Americano), new PropertyMetadata(TypeC.Coffee));
+
+
         public Americano()
         {
             InitializeComponent();

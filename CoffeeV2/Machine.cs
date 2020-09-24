@@ -12,66 +12,21 @@ namespace CoffeeV2
 {
     public abstract class DrinkClass
     {
-        private const int beancons = 1;
-        private int sugar = 0;
-        public  int Bc
-        {
-            get
-            {
-                return beancons;
-            }
-        }
-        public int Sugar
-        {
-            set
-            {
-                int a = value;
-                if (a > 5) a = 5;
-                if (a < 0) a = 0;
-                sugar = a;
-            }
-            get
-            {
-                return sugar;
-            }
-        }
-        
-        
-       
+        string name;
     }
    
-    public class CappucinoClass : DrinkClass
+    public class Coffee : DrinkClass
     {
-        private const int milkcons = 3;
-        public int Mc
-        {
-            get
-            {
-                return milkcons;
-            }
-        }
+       
+        
     }
-    public enum Drinks
-    {
-        Mocca, 
-        Espresso,
-        Black,
-        Capuccino,
-        Tea,
-        Water,
-        Latte,
-        Americano,
-        None
-    }
+   
 
     class Machine :ICoffeeNes
     {
         
 
 
-        private Drinks drink;
-        private int sugar;
-        private int milkneeded;
         private double balance;
         public double Balance
         {
@@ -85,35 +40,11 @@ namespace CoffeeV2
                 balance = +value;
             }
         } 
+        public double Asked { get; set; }
        
        
         
-        public int Sugar
-        {
-            set
-            {
-                int tmp = value;
-                if (tmp < 0) throw new Exception("Количество молока не может быть отрицательным");
-                if (tmp > 5) tmp = 5;
-                sugar = tmp;
-            }
-            get
-            {
-                return sugar;
-            }
-        }
-        
-        public Drinks Drink
-        {
-            get
-            {
-                return drink;
-            }
-            set
-            {
-                drink = value;
-            }
-        }
+       
         
         public bool Ready = false;
         public bool Start(out string error)
@@ -133,8 +64,6 @@ namespace CoffeeV2
         }
         public Machine()
         {
-            Drink = Drinks.None;
-            Sugar = 0;
 
         }
         public bool IsOk(out string a)

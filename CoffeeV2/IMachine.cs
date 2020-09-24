@@ -13,7 +13,6 @@ namespace CoffeeV2
 
         void Cancel();
         double Balance { get; set; }
-        Drinks Drink { get; set; }
         bool IsOk(out string a);
       
 

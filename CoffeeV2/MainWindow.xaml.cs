@@ -28,10 +28,8 @@ namespace CoffeeV2
    
     public partial class MainWindow : Window
     {
-        Brush std;
         Machine mainc;
         public Wallet wl;
-        bool cuptaken = true;
         
         public MainWindow()
         {
@@ -93,8 +91,9 @@ namespace CoffeeV2
             GoDisable();
             Americano a = (Americano)sender;
             a.Acitve = !a.Acitve;
-            
-            
+            Choice.Content = "Напиток:\n";
+            Choice.Content += a.NameCoffee;
+            mainc.Asked = a.Price;
         }
 
         private void Moc_MouseEnter(object sender, MouseEventArgs e)
@@ -119,51 +118,9 @@ namespace CoffeeV2
         }
         public void Upd()
         {
-            Choice.Content = "Напиток:";
+            
             blnce.Content = "Кредит: ";
-            switch (mainc.Drink)
-            {
-                case Drinks.Americano:
-                    {
-                        Choice.Content += "\nАмерикано";
-                        break;
-                    }
-                case Drinks.Capuccino:
-                    {
-                        Choice.Content += "\nКаппучино";
-                        break;
-                    }
-                case Drinks.Mocca:
-                    {
-                        Choice.Content += "\nМоккачино";
-                        break;
-                    }
-                case Drinks.Water:
-                    {
-                        Choice.Content += "\nВода";
-                        break;
-                    }
-                case Drinks.Black:
-                    {
-                        Choice.Content += "\nЧерный кофе";
-                        break;
-                    }
-                case Drinks.Latte:
-                    {
-                        Choice.Content += "\nЛатте";
-                        break;
-                    }
-                case Drinks.Tea:
-                    {
-                        Choice.Content += "\nЧай";
-                        break;
-                    }
-                case Drinks.Espresso:
-                    {
-                        Choice.Content += "\nЭсперессо";
-                        break;
-                    }
-            }
+            
             blnce.Content += mainc.Balance + "р.";
         }
 
@@ -193,86 +150,24 @@ namespace CoffeeV2
 
 
         }
-        private  void Cup_Completed(object sender, EventArgs e)
+        private void DrinkDone(object sender, EventArgs e)
         {
-            DoubleAnimation da = new DoubleAnimation();
-            da.Completed += new EventHandler(LiquidDone); 
-            da.From = 0;
-            da.To = 50;
-            da.Duration = TimeSpan.FromSeconds(2);
-            da.AutoReverse = true;
-            liquid.BeginAnimation(Rectangle.HeightProperty, da);
-        } 
-        private void LiquidDone(object sender, EventArgs e)
-        {
-            DoubleAnimation enlargew = new DoubleAnimation();
-            DoubleAnimation enlargeh = new DoubleAnimation();
-            enlargew.From = Coffee.Width;
-            enlargeh.From = Coffee.Height;
-            enlargew.To = Coffee.Width * 1.5;
-            enlargeh.To = Coffee.Height* 1.5;
-            Coffee.BeginAnimation(Path.HeightProperty, enlargeh);
-            Coffee.BeginAnimation(Path.WidthProperty, enlargew);
             cook.Content = "Заберите напиток";
-
+        }
+        private void Taken(object sender, EventArgs e)
+        {
+            cook.Content = "Приготовить";
+            GoDisable();
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dia = new OpenFileDialog();
-            dia.DefaultExt = ".png";
-            dia.Filter = "Images (.Png)|*.Png";
-
-            if (dia.ShowDialog() == true )
+            if (!chb.Commenced && mainc.Balance >= mainc.Asked)
             {
-                Uri ur = new Uri(dia.FileName);
-                Amr.Drink = new BitmapImage(ur);
-
+                chb.GoAtIt();
+                chb.Prepared += new EventHandler(DrinkDone);
+                chb.Taken += new EventHandler(Taken);
+                cook.Content = "В процессе...";
             }
-            
-            if (mainc.IsOk(out string a) && cuptaken)
-            {
-                cuptaken = false;
-                cook.Content = "В процессе";
-                ColorAnimation sd = new ColorAnimation();
-                sd.Completed += new EventHandler(Cup_Completed);
-                SolidColorBrush sc = clr;
-                sd.From = null;
-                sd.To = Color.FromArgb(255,251,165,100);
-                sc.BeginAnimation(SolidColorBrush.ColorProperty, sd);
-                Upd();
-                
-
-                //liquid.BeginAnimation(Rectangle.HeightProperty, null);
-            }
-
         }
-
-        private void Coffee_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (Coffee.Height == 48)
-            {
-                DoubleAnimation enlargew = new DoubleAnimation();
-                DoubleAnimation enlargeh = new DoubleAnimation();
-                enlargeh.Duration = TimeSpan.FromSeconds(0);
-                enlargew.Duration = TimeSpan.FromSeconds(0);
-                enlargew.From = Coffee.Width;
-                enlargeh.From = Coffee.Height;
-                enlargew.To = Coffee.Width / 1.5;
-                enlargeh.To = Coffee.Height / 1.5;
-                Coffee.BeginAnimation(Path.HeightProperty, enlargeh);
-                Coffee.BeginAnimation(Path.WidthProperty, enlargew);
-                liquid.Height = 0;
-                ColorAnimation ca = new ColorAnimation();
-                ca.From = Color.FromArgb(255, 251, 165, 100);
-                ca.To = null;
-                ca.Duration = TimeSpan.FromSeconds(0);
-                SolidColorBrush sb = clr;
-                clr.BeginAnimation(SolidColorBrush.ColorProperty, ca);
-                cuptaken = true;
-                cook.Content = "Приготовить";
-            }
-
-            
-        }
-    }
+    } 
 }
