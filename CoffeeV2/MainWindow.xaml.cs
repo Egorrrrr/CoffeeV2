@@ -128,7 +128,7 @@ namespace CoffeeV2
         private void Rectangle_Drop(object sender, DragEventArgs e)
         {
             string a = e.Data.GetData(DataFormats.Text).ToString();
-            if (a == "key")
+            if (a == "key" && !chb.Commenced)
             {
                 panelc.Maintenance();
                 return;
@@ -160,14 +160,23 @@ namespace CoffeeV2
         }
         private void DrinkDone(object sender, EventArgs e)
         {
+            mainc.Balance -= mainc.Asked;
             cook.Content = "Заберите напиток";
         }
         private void Taken(object sender, EventArgs e)
         {
-            cook.Content = "Заберите сдачу";
-            changetaken = false;
-            coins.Visibility = Visibility.Visible;
-            
+            if (mainc.Balance != 0)
+            {
+                cook.Content = "Заберите сдачу";
+                changetaken = false;
+                coins.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                cook.Content = "Приготовить";
+                Upd();
+            }
+
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -204,8 +213,7 @@ namespace CoffeeV2
                         }
 
                 }
-                mainc.Balance = 0;
-                Upd();
+                
                 cook.Content = "В процессе...";
                 cancel.Visibility = Visibility.Visible;
             }
@@ -237,7 +245,9 @@ namespace CoffeeV2
         {
             coins.Visibility = Visibility.Collapsed;
             changetaken = true;
+            mainc.Balance = 0;
             cook.Content = "Приготовить";
+            Upd();
         }
     } 
 }
