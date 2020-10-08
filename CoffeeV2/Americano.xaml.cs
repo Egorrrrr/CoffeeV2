@@ -20,11 +20,14 @@ namespace CoffeeV2
     /// <summary>
     /// Логика взаимодействия для UserControl4.xaml
     /// </summary>
+    ///
+ 
     public partial class Americano : UserControl
     {
         public enum TypeC
         {
             Coffee,
+            MilkCoffee,
             Tea,
             Other
         }
@@ -77,8 +80,8 @@ namespace CoffeeV2
             }
             set 
             {
-                string rubles = value + "р.";
-                SetValue(PriceProperty, rubles); 
+                
+                SetValue(PriceProperty, value); 
             }
         }
         public static double a = 25;
@@ -150,7 +153,7 @@ namespace CoffeeV2
                 {
                     ColorAnimation ca = new ColorAnimation();
                     ca.From = scb.Color;
-                    ca.To = Colors.Pink;
+                    ca.To = Color.FromArgb(255,245, 94, 83);
                     ca.Duration = TimeSpan.FromMilliseconds(200);
                     scb.BeginAnimation(SolidColorBrush.ColorProperty, ca);
                     act = true;
@@ -173,8 +176,57 @@ namespace CoffeeV2
         // Using a DependencyProperty as the backing store for Acitve.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty AcitveProperty =
             DependencyProperty.Register("Acitve", typeof(bool), typeof(Americano), new PropertyMetadata(false));
+        private Color ColorDr;
+        public Color ColorChoice
+        {
+            get
+            {
+                return ColorDr;
+            }
+            set
+            {
+                if(Type == TypeC.Other)
+                {
+                    ColorDr = value;
+                }
+                else
+                {
+                    Replenish();
+                }
+            }
+        }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Replenish();
+        }
+        public void Replenish()
+        {
+            switch (Type)
+            {
+                case (TypeC.Tea):
+                    {
+                        ColorDr = Colors.Brown;
+                        break;
+                    }
+                case (TypeC.Coffee):
+                    {
+                        ColorDr = Colors.Black;
+                        break;
+                    }
+                case (TypeC.MilkCoffee):
+                    {
+                        ColorDr = Colors.SandyBrown;
+                        break;
+                    }
+                case (TypeC.Other):
+                    {
+                        ColorDr = Colors.LightBlue;
+                        break;
+                    }
 
+            }
+        }
     }
 
 

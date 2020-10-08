@@ -20,6 +20,16 @@
         <Image Height="111" Canvas.Left="152" Canvas.Top="124" Width="121" Source="2_Russian_Rubles_Obverse_2016.png" Tag="2" MouseDown="Image_MouseDown"/>
         <Image Height="137" Canvas.Left="292" Canvas.Top="98" Width="147" Source="1028px-Russia-Coin-5-1997-a.png" Tag="5" MouseDown="Image_MouseDown"/>
         <Image Height="108" Canvas.Left="444" Canvas.Top="127" Width="116" Source="Russia-Coin-10-2009-a.png" Tag="10" MouseDown="Image_MouseDown"/>
+        <Image Tag="key" Height="192" Canvas.Left="182" Canvas.Top="201" Width="95" Source="toppng.com-gold-key-209x600.png" MouseDown="Image_MouseDown" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="88.821"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Canvas>
 
 </Window>

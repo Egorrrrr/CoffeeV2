@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoffeeV2"
              mc:Ignorable="d" 
-             d:DesignHeight="58" d:DesignWidth="92">
+             d:DesignHeight="58" d:DesignWidth="92" Loaded="UserControl_Loaded">
     <Grid Margin="0,0,0,-10" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
         <Grid>
             <Rectangle   Name="Rce"  HorizontalAlignment="Left" Height="67" Stroke="Black" VerticalAlignment="Top" Width="95" Margin="-1,0,-2,0" RadiusX="15" RadiusY="15">
@@ -17,7 +17,7 @@
             </Rectangle>
             <Label Content="{Binding Path=NameCoffee, 
                            RelativeSource= {RelativeSource Mode=FindAncestor, 
-                                                           AncestorType={x:Type local:Americano}}}" x:Name="Americanodr" HorizontalAlignment="Left" Margin="-3,-6,-10,0" VerticalAlignment="Top" Foreground="White" Width="105" FontFamily="MV Boli" IsEnabled="False" FontSize="18"/>
+                                                           AncestorType={x:Type local:Americano}}}" x:Name="Americanodr" HorizontalAlignment="Left" Margin="-3,-6,-10,0" VerticalAlignment="Top" Foreground="White" Width="105" FontFamily="MV Boli" IsEnabled="False" FontSize="18" BorderBrush="#FF592323" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated"/>
 
             <Image x:Name="drnk" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="59" Margin="4,22,0,-8" Source="{Binding Path=Drink, 
                            RelativeSource= {RelativeSource Mode=FindAncestor, 

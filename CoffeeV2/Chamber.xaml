@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoffeeV2"
              mc:Ignorable="d" 
-             d:DesignHeight="128" d:DesignWidth="218">
+             d:DesignHeight="128" Width="234">
     <Grid>
-        <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="128" RadiusY="5" RadiusX="5" Stroke="#00000000" VerticalAlignment="Top" Width="218"/>
+        <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="128" RadiusY="14" RadiusX="14" Stroke="#00000000" VerticalAlignment="Top" Width="234"/>
         <Rectangle x:Name="mn" Fill="#FF131313" Stroke="Black" RadiusX="5" RadiusY="5" Margin="54,32,60,34"/>
         <Path Panel.ZIndex="100" x:Name="Coffee" Data=" M15,0 L60,0   75,30 0,30  z" Height="32" Stretch="Fill" Stroke="#00000000" Width="26.499" Canvas.Left="119.75" Canvas.Top="470"  RenderTransformOrigin="0.5,0.5" MouseDown="Coffee_MouseDown">
             <Path.Fill>
@@ -23,7 +23,21 @@
             </Path.RenderTransform>
 
         </Path>
-        <Rectangle x:Name="liquid" Fill="#FF7E4F20" HorizontalAlignment="Left" Height="1" Margin="102,32,0,0" RadiusY="5" RadiusX="5" Stroke="#00000000" VerticalAlignment="Top" Width="5"/>
+        <Rectangle x:Name="liquid"   HorizontalAlignment="Left" Height="1" Margin="117,32,0,0" RadiusY="5" RadiusX="5" Stroke="#00000000" VerticalAlignment="Top" Width="5">
+            <Rectangle.Fill>
+                <SolidColorBrush x:Name="scbs" Color="#FF7E4F20"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="sugar" Visibility="Collapsed" Fill="White" HorizontalAlignment="Left" Height="4" Margin="108,32,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="4" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
 
 
     </Grid>

@@ -26,26 +26,77 @@ namespace CoffeeV2
         public bool CoffeePrepared { get { return prepd; } }
         private bool commenced= false;
         public bool Commenced { get { return commenced; } }
+        Color othercolor = Colors.Transparent;
+        Color ccolor;
         public Chamber()
         {
             InitializeComponent();
         }
-        public void GoAtIt()
+        public void GoAtIt(Americano oth, Color cup)
         {
+            othercolor = oth.ColorChoice;
+            
+            GoAtIt(false, 0, cup);
+        }
+        public void GoAtIt(int sugar, Color cup)
+        {
+            othercolor = Color.FromArgb(255, 107, 66, 4);
+           
+            GoAtIt(false, sugar,cup);
+
+
+        }
+        
+        public void GoAtIt(bool milk, int sugar, Color cup)
+        {
+            ccolor = cup;
+            if (othercolor == Colors.Transparent)
+            {
+                if (!milk)
+                {
+                    scbs.Color = Color.FromArgb(255, 46, 29, 3);   
+                }
+            }
+            else
+            {
+                scbs.Color = othercolor;
+            }
+
             if (!commenced && !prepd)
             {
                 ColorAnimation sd = new ColorAnimation();
                 sd.Completed += new EventHandler(Cup_Completed);
+                sd.Completed += new EventHandler(TimeForSugar);
                 SolidColorBrush sc = clr;
                 sd.From = null;
-                sd.To = Color.FromArgb(255, 251, 165, 100);
+                sd.Duration = TimeSpan.FromSeconds(2);
+                sd.To = ccolor;
                 sc.BeginAnimation(SolidColorBrush.ColorProperty, sd);
                 commenced = true;
             }
         }
+        public void Cancel()
+        {
+            clr.BeginAnimation(SolidColorBrush.ColorProperty, null);
+            prepd = false;
+            commenced = false;
+        }
+        public event EventHandler UnableToCancel;
+        private void TimeForSugar(object sender, EventArgs e)
+        {
+            DoubleAnimation da = new DoubleAnimation();
+            
+        }
         private void Cup_Completed(object sender, EventArgs e)
         {
-
+            if(clr.HasAnimatedProperties == false)
+            {
+                return;
+            }
+            if(UnableToCancel != null)
+            {
+                UnableToCancel(this, EventArgs.Empty);
+            }
             DoubleAnimation da = new DoubleAnimation();
             da.Completed += new EventHandler(LiquidDone);
             da.From = 0;
@@ -96,7 +147,7 @@ namespace CoffeeV2
                 Coffee.BeginAnimation(Path.WidthProperty, enlargew);
                 liquid.Height = 0;
                 ColorAnimation ca = new ColorAnimation();
-                ca.From = Color.FromArgb(255, 251, 165, 100);
+                ca.From = ccolor;
                 ca.To = null;
                 ca.Duration = TimeSpan.FromSeconds(0);
                 SolidColorBrush sb = clr;

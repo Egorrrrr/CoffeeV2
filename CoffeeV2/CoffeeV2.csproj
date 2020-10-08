@@ -64,6 +64,12 @@
     <Compile Include="Chamber.xaml.cs">
       <DependentUpon>Chamber.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pnl.xaml.cs">
+      <DependentUpon>Pnl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settigns.xaml.cs">
+      <DependentUpon>Settigns.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Wallet.xaml.cs">
       <DependentUpon>Wallet.xaml</DependentUpon>
     </Compile>
@@ -86,6 +92,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Americano.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pnl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settigns.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +190,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="kisspng-hazardville-water-co-jewett-city-liquid-water-serv-water-glass-5ac99f13f3cd17.0973767715231628999986.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="mb-golden-coins-pile-of-gold-colored-coins-png-pngbarn-colored-coins-png-910_429.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Coins_PNG_Clip_Art_Image-668354268.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="toppng.com-gold-key-209x600.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

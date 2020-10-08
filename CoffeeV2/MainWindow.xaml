@@ -14,17 +14,15 @@
         </Canvas.Background>
         <Button x:Name="close" Content="X" Canvas.Left="320" Width="87" Background="#19DDDDDD" Foreground="White" Height="44" FontSize="30" Click="Button_Click"/>
         <Canvas x:Name="mov" Height="44" Width="320" Background="#26EEEEEE" MouseDown="mov_MouseDown"/>
-        <Rectangle Fill="#FF2C2B2B" Height="264" Canvas.Left="258" RadiusY="7" RadiusX="7" Stroke="Black" Canvas.Top="121" Width="136"/>
+        <Rectangle Panel.ZIndex="-2" Fill="#FF2C2B2B" Height="264" Canvas.Left="258" RadiusY="7" RadiusX="7" Stroke="Black" Canvas.Top="121" Width="136"/>
         <Slider x:Name="sld" Canvas.Left="264" Canvas.Top="390" Width="130" Maximum="5" SmallChange="1" ValueChanged="Slider_ValueChanged" Height="14"/>
-        <local:Americano x:Name="Amr" Canvas.Left="150" Canvas.Top="193" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" Drink="latte.png" NameCoffee="Latte">
-        </local:Americano>
         <Label x:Name="Choice" Content="Напиток:" Canvas.Left="258" Canvas.Top="134" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
         <Label x:Name="Sugar" Content="Сахар: " Canvas.Left="258" Canvas.Top="356" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
         <Label x:Name="blnce" Content="Кредит:" Canvas.Left="258" Canvas.Top="198" Background="#00000000" Foreground="#FF36CD4B" FontSize="15"/>
         <Ellipse Fill="#FF303030" Height="100" Canvas.Left="280" Stroke="Black" Canvas.Top="444" Width="101"/>
         <Rectangle Fill="Black" Height="17" Canvas.Left="342" Stroke="Black" Canvas.Top="459" Width="5"/>
         <Rectangle Fill="#FF131313" Height="39" Canvas.Left="305" Stroke="Black" Canvas.Top="485" Width="51" RadiusX="3" RadiusY="3"/>
-        <Button x:Name="wallet" Content="Кошелек" Canvas.Left="298" Width="110" Background="#3331D600" Foreground="White" Height="42" FontSize="20" Canvas.Top="570" RenderTransformOrigin="0.5,0.5" Click="wallet_Click">
+        <Button x:Name="wallet" Content="Кошелек" Canvas.Left="296" Width="110" Background="#3331D600" Foreground="White" Height="42" FontSize="20" Canvas.Top="572" RenderTransformOrigin="0.5,0.5" Click="wallet_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -36,14 +34,11 @@
         </Button>
         <Rectangle Fill="#03000000" Height="24" Canvas.Left="305" Stroke="Black" Canvas.Top="456" Width="53" Drop="Rectangle_Drop" DragEnter="Rectangle_DragEnter" AllowDrop="True" />
         <Button x:Name="cook" Content="Приготовить" Canvas.Left="264" Canvas.Top="242" Width="124" BorderBrush="#00000000" Height="36" Background="#FF0A7C39" Foreground="White" Click="Button_Click_1"/>
-        <local:Americano x:Name="Wtr" Canvas.Left="150" Canvas.Top="266" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" Drink="kisspng-hazardville-water-co-jewett-city-liquid-water-serv-water-glass-5ac99f13f3cd17.0973767715231628999986.png" NameCoffee="Water" Type="Other"/>
-        <local:Americano x:Name="Tea" Canvas.Left="150" Canvas.Top="339" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Tea" Drink="pngfind.com-tea-png-482019.png" Type="Tea"/>
-        <local:Americano x:Name="Esp" Canvas.Left="24" Canvas.Top="339" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Espresso" Drink="kisspng-coffee-espresso-latte-macchiato-cafe-latte-5ac2cb69c7ef90.478860451522715497819.png"/>
-        <local:Americano x:Name="Black" Canvas.Left="24" Canvas.Top="266" Height="60" Width="92" Tag="t" MouseDown="Drink_MouseDown" Drink="kisspng-coffee-tea-cappuccino-cafe-deciliter-black-coffee-5a993d3cd60264.4841130515199921248766.png" NameCoffee="Black"/>
-        <local:Americano x:Name="Moc" Canvas.Left="24" Canvas.Top="193" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Mocaccino" Drink="IMGBIN_coffee-latte-espresso-cafe-flat-white-png_fL9ULZAB.png"/>
-        <local:Americano x:Name="Ame" Canvas.Left="24" Canvas.Top="121" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Americano" Drink="IMGBIN_white-coffee-caffè-americano-espresso-tea-png_8Yatd3ht.png" OverridesDefaultStyle="True"/>
-        <local:Americano x:Name="Cap" Canvas.Left="150" Canvas.Top="121" Height="61" Width="92" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Cappuccino" Drink="pngegg.png"/>
-        <local:Chamber  x:Name="chb" Canvas.Left="33" Canvas.Top="444"></local:Chamber>
+        <local:Chamber  x:Name="chb" Canvas.Left="19" Canvas.Top="456" Width="238"></local:Chamber>
+        <local:Pnl x:Name="panelc" Canvas.Left="10" Canvas.Top="67"></local:Pnl>
+        <Button x:Name="cancel" Content="Отмена" Canvas.Left="264" Canvas.Top="295" Width="124" BorderBrush="#00000000" Height="36" Background="#FF0A7C39" Foreground="White"  Visibility="Collapsed" Click="cancel_Click"/>
+        <Label Panel.ZIndex="-1" x:Name="msg"  Content="" Canvas.Left="264" Canvas.Top="283" Background="#00000000" Foreground="#FF36CD4B" FontSize="15" Width="117" Height="68"/>
+        <Image x:Name="coins" Visibility="Collapsed" Height="38" Canvas.Left="306" Canvas.Top="486" Width="50" Panel.ZIndex="2" Source="Coins_PNG_Clip_Art_Image-668354268.png" MouseDown="coins_MouseDown"/>
 
     </Canvas>
 </Window>

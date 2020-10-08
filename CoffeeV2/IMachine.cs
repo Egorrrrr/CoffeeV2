@@ -9,14 +9,7 @@ namespace CoffeeV2
 {
     public interface ICoffeeNes
     {
-        bool Start(out string error);
-
-        void Cancel();
-        double Balance { get; set; }
-        bool IsOk(out string a);
-      
-
-
+        
         
 
     }
