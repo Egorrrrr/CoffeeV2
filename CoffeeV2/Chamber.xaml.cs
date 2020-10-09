@@ -26,8 +26,8 @@ namespace CoffeeV2
         public bool CoffeePrepared { get { return prepd; } }
         private bool commenced= false;
         public bool Commenced { get { return commenced; } }
-        Color othercolor = Colors.Transparent;
-        Color ccolor;
+        public Color othercolor = Colors.Transparent;
+        Color ccolor = new Color();
         public Chamber()
         {
             InitializeComponent();
@@ -40,10 +40,9 @@ namespace CoffeeV2
         }
         public void GoAtIt(int sugar, Color cup)
         {
-            othercolor = Color.FromArgb(255, 107, 66, 4);
+            othercolor = Color.FromArgb(255, 107, 35, 4);
            
             GoAtIt(false, sugar,cup);
-
 
         }
         
@@ -55,6 +54,10 @@ namespace CoffeeV2
                 if (!milk)
                 {
                     scbs.Color = Color.FromArgb(255, 46, 29, 3);   
+                }
+                else
+                {
+                    scbs.Color = Color.FromArgb(255, 217, 185, 145);
                 }
             }
             else
@@ -68,7 +71,7 @@ namespace CoffeeV2
                 sd.Completed += new EventHandler(Cup_Completed);
                 sd.Completed += new EventHandler(TimeForSugar);
                 SolidColorBrush sc = clr;
-                sd.From = null;
+                sd.From = Colors.Transparent;
                 sd.Duration = TimeSpan.FromSeconds(2);
                 sd.To = ccolor;
                 sc.BeginAnimation(SolidColorBrush.ColorProperty, sd);
@@ -100,7 +103,7 @@ namespace CoffeeV2
             DoubleAnimation da = new DoubleAnimation();
             da.Completed += new EventHandler(LiquidDone);
             da.From = 0;
-            da.To = 50;
+            da.To = 40;
             da.Duration = TimeSpan.FromSeconds(2);
             da.AutoReverse = true;
             liquid.BeginAnimation(HeightProperty, da);
@@ -151,13 +154,15 @@ namespace CoffeeV2
                 ca.To = null;
                 ca.Duration = TimeSpan.FromSeconds(0);
                 SolidColorBrush sb = clr;
+                othercolor = Colors.Transparent;
+                ccolor = Colors.Transparent; 
                 clr.BeginAnimation(SolidColorBrush.ColorProperty, ca);
                 if (Taken != null)
                 {
                     Taken(this, EventArgs.Empty);
                 }
                 prepd = false;
-
+                
             }
         }
     }

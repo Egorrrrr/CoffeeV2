@@ -128,7 +128,7 @@ namespace CoffeeV2
 
             System.Windows.Forms.ColorDialog a = new System.Windows.Forms.ColorDialog();
             a.ShowDialog();
-            cc.Color = Color.FromArgb(a.Color.A, a.Color.R, a.Color.G, a.Color.B) ;
+            cc.Color = Color.FromArgb(255, a.Color.R, a.Color.G, a.Color.B) ;
             
 
         }
