@@ -39,15 +39,21 @@ namespace CoffeeV2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofp = new OpenFileDialog();
-            ofp.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
-            if (ofp.ShowDialog() == null)
+            try
             {
-
+                OpenFileDialog ofp = new OpenFileDialog();
+                ofp.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
+                ofp.ShowDialog();
                 Uri uri = new Uri(ofp.FileName);
                 BitmapImage bmi = new BitmapImage(uri);
                 pic.Source = bmi;
             }
+            catch(Exception ee)
+            {
+                MessageBox.Show("Error: " + ee.Message);
+
+            }
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -97,7 +103,6 @@ namespace CoffeeV2
                 tt += item + " ";
             }
             //MessageBox.Show(tt);
-            string aaa = "";
             for (int i = 0; i < ls.Count; i++)
             {
                 if (ls[i] == type.Text)
@@ -131,6 +136,34 @@ namespace CoffeeV2
             cc.Color = Color.FromArgb(255, a.Color.R, a.Color.G, a.Color.B) ;
             
 
+        }
+
+        private void price_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            TextBox temp = (TextBox)sender;
+            temp.Text = Remover(temp.Text);
+            temp.CaretIndex = temp.Text.Length;
+        }
+        public string Remover(string a)
+        {
+            if(a.Length > 3)
+            {
+                a = a[0].ToString() + a[1] + a[2];
+            }
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (char.IsDigit(a[i]))
+                {
+                    continue;
+                }
+                a = a.Remove(i, 1);
+                i--;
+
+
+            }
+            return a;
         }
     }
 }

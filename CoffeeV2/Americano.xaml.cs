@@ -43,6 +43,10 @@ namespace CoffeeV2
             DependencyProperty.Register("Type", typeof(TypeC), typeof(Americano), new PropertyMetadata(TypeC.Coffee));
 
 
+
+       
+
+
         public Americano()
         {
             InitializeComponent();

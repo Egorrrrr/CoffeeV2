@@ -7,8 +7,8 @@
         xmlns:local="clr-namespace:CoffeeV2"
         mc:Ignorable="d"
         
-        Title="MainWindow" Height="612" Width="389.5" ResizeMode="NoResize" WindowStyle="None" >
-    <Canvas x:Name="cavasmn" HorizontalAlignment="Left" Height="616" VerticalAlignment="Top" Width="407" Margin="-17,0,0,-4" Loaded="cavasmn_Loaded">
+        Title="MainWindow" Height="612" Width="407.5" ResizeMode="NoResize" WindowStyle="None" >
+    <Canvas x:Name="cavasmn" HorizontalAlignment="Left" Height="616" VerticalAlignment="Top" Width="408" Margin="0,0,-18,-4" Loaded="cavasmn_Loaded">
         <Canvas.Background>
             <ImageBrush ImageSource="95a4ecfc57b6d44754e242c87f6d30c7.jpg"/>
         </Canvas.Background>
@@ -35,10 +35,11 @@
         <Rectangle Fill="#03000000" Height="24" Canvas.Left="305" Stroke="Black" Canvas.Top="456" Width="53" Drop="Rectangle_Drop" DragEnter="Rectangle_DragEnter" AllowDrop="True" />
         <Button x:Name="cook" Content="Приготовить" Canvas.Left="264" Canvas.Top="242" Width="124" BorderBrush="#00000000" Height="36" Background="#FF0A7C39" Foreground="White" Click="Button_Click_1"/>
         <local:Chamber  x:Name="chb" Canvas.Left="19" Canvas.Top="456" Width="238"></local:Chamber>
-        <local:Pnl x:Name="panelc" Canvas.Left="10" Canvas.Top="67"></local:Pnl>
+        <local:Pnl x:Name="panelc" Canvas.Left="10" Canvas.Top="21" Height="435"></local:Pnl>
         <Button x:Name="cancel" Content="Отмена" Canvas.Left="264" Canvas.Top="295" Width="124" BorderBrush="#00000000" Height="36" Background="#FF0A7C39" Foreground="White"  Visibility="Collapsed" Click="cancel_Click"/>
         <Label Panel.ZIndex="-1" x:Name="msg"  Content="" Canvas.Left="264" Canvas.Top="283" Background="#00000000" Foreground="#FF36CD4B" FontSize="15" Width="117" Height="68"/>
         <Image x:Name="coins" Visibility="Collapsed" Height="38" Canvas.Left="306" Canvas.Top="486" Width="50" Panel.ZIndex="2" Source="Coins_PNG_Clip_Art_Image-668354268.png" MouseDown="coins_MouseDown"/>
+
 
     </Canvas>
 </Window>

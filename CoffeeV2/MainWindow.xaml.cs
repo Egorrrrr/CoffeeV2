@@ -53,6 +53,16 @@ namespace CoffeeV2
             Choice.Content = "Напиток:\n" + chosen.NameCoffee;
             mainc.Asked = chosen.Price;
             mainc.Type = chosen.Type;
+            if(mainc.Type == TypeC.Other)
+            {
+                SugarLock(true);
+            }
+            else if(sugarlocked)
+            {
+                SugarLock(false);
+                Sugar.Content = "Сахар: ";
+                
+            }
             
         }
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
@@ -177,6 +187,15 @@ namespace CoffeeV2
                 Upd();
             }
 
+        }
+        bool sugarlocked = false;
+        private void SugarLock(bool a)
+        {
+            sld.Value = 0;
+            Sugar.Content = "Без сахара";
+            sld.IsEnabled = !a;
+            sugarlocked = a;
+            
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

@@ -20,7 +20,7 @@ namespace CoffeeV2
 
     }
    
-    public class Coffee : DrinkClass
+    public class Coffee : DrinkClass , IDrink
     {
         public bool milk;
         public Coffee(string name, bool milk, int sugar, Color c)
@@ -42,7 +42,7 @@ namespace CoffeeV2
             ch.GoAtIt(this.milk, this.sugar, this.CupColor);
         }
     }
-    public class Tea : DrinkClass 
+    public class Tea : DrinkClass, IDrink
     {
         public Tea(string name, int sugar, Color c)
         {
@@ -61,7 +61,7 @@ namespace CoffeeV2
             ch.GoAtIt(this.sugar, this.CupColor);
         }
     }
-    public class Other 
+    public class Other : IDrink 
     {
         public Color CupColor;
         public Americano drk;
@@ -106,21 +106,5 @@ namespace CoffeeV2
         public double Asked { get; set; }
         public TypeC Type { get; set; }
         public int Sugar { get; set; }
-
-
-
-        public bool Ready = false;
-        
-        public Machine()
-        {
-
-        }
-        public bool IsOk(out string a)
-        {
-            a = "";
-            return true;
-        }
-        
-
     }
 }

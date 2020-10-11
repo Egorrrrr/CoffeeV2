@@ -5,39 +5,47 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoffeeV2"
-             mc:Ignorable="d" d:DesignWidth="235" Height="377">
+             mc:Ignorable="d" d:DesignWidth="235" Height="435">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="104*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <local:Americano x:Name="Amr" Tag="t" MouseDown="Drink_MouseDown" Drink="latte.png" NameCoffee="Latte" Margin="136,121,7,188" Type="MilkCoffee" />
-        <local:Americano x:Name="Wtr" Tag="t" MouseDown="Drink_MouseDown" Drink="kisspng-hazardville-water-co-jewett-city-liquid-water-serv-water-glass-5ac99f13f3cd17.0973767715231628999986.png" NameCoffee="Water" Type="Other" Margin="136,194,7,115"/>
-        <local:Americano Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Tea" Drink="pngfind.com-tea-png-482019.png" Type="Tea" Margin="136,267,7,42"/>
-        <local:Americano x:Name="Esp" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Espresso" Drink="kisspng-coffee-espresso-latte-macchiato-cafe-latte-5ac2cb69c7ef90.478860451522715497819.png" Margin="10,267,133,42"/>
-        <local:Americano x:Name="Black" Tag="t" MouseDown="Drink_MouseDown" Drink="kisspng-coffee-tea-cappuccino-cafe-deciliter-black-coffee-5a993d3cd60264.4841130515199921248766.png" NameCoffee="Black" Margin="10,194,133,115"/>
-        <local:Americano x:Name="Moc" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Mocaccino" Drink="IMGBIN_coffee-latte-espresso-cafe-flat-white-png_fL9ULZAB.png" Margin="10,121,133,188" Type="MilkCoffee"/>
-        <local:Americano x:Name="Ame" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Americano" Drink="IMGBIN_white-coffee-caffè-americano-espresso-tea-png_8Yatd3ht.png" OverridesDefaultStyle="True" Margin="10,49,133,261"/>
-        <local:Americano x:Name="Cap" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Cappuccino" Drink="pngegg.png" Margin="136,49,7,261" Type="MilkCoffee" />
-        <local:Americano  HorizontalAlignment="Left" Height="100" Margin="10,121,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed" Tag = "t" MouseDown="Drink_MouseDown" />
-        <local:Americano  HorizontalAlignment="Left" Height="100" Margin="10,49,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed" Tag = "t" MouseDown="Drink_MouseDown" />
-        <local:Americano  HorizontalAlignment="Left" Height="100" Margin="136,49,-1,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed" Tag = "t" MouseDown="Drink_MouseDown" />
-        <local:Americano  HorizontalAlignment="Left" Height="100" Margin="10,194,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed" Tag = "t" MouseDown="Drink_MouseDown" />
-        <local:Americano  HorizontalAlignment="Left" Height="100" Margin="136,121,-1,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed" Tag = "t" MouseDown="Drink_MouseDown" />
-        <local:Americano  HorizontalAlignment="Left" Height="100" Margin="136,194,-1,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed" Tag = "t" MouseDown="Drink_MouseDown" />
-        <local:Americano  HorizontalAlignment="Left" Height="100" Margin="10,267,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed" Tag = "t" MouseDown="Drink_MouseDown" />
-        <local:Americano  HorizontalAlignment="Left" Height="100" Margin="136,267,-1,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed" Tag = "t" MouseDown="Drink_MouseDown" />
-        <Rectangle x:Name="rar" HorizontalAlignment="Left" Height="28" Margin="136,345,0,0" RadiusY="15" RadiusX="15" Stroke="White" VerticalAlignment="Top" Width="95" MouseEnter="rar_MouseEnter" MouseLeave="rar_MouseLeave" MouseDown="rar_MouseDown">
+        <local:Americano x:Name="Amr" Tag="t" MouseDown="Drink_MouseDown" Drink="latte.png" NameCoffee="Latte" Margin="133,47,10,197" Type="MilkCoffee" Uid="3" Grid.Row="1" />
+        <local:Americano x:Name="Wtr" Tag="t" MouseDown="Drink_MouseDown" Drink="kisspng-hazardville-water-co-jewett-city-liquid-water-serv-water-glass-5ac99f13f3cd17.0973767715231628999986.png" NameCoffee="Water" Type="Other" Margin="133,120,10,124" Uid="5" Grid.Row="1"/>
+        <local:Americano Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Tea" Drink="pngfind.com-tea-png-482019.png" Type="Tea" Margin="133,193,10,51" Uid="7" Grid.Row="1"/>
+        <local:Americano x:Name="Esp" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Espresso" Drink="kisspng-coffee-espresso-latte-macchiato-cafe-latte-5ac2cb69c7ef90.478860451522715497819.png" Margin="7,193,136,51" Uid="6" Grid.Row="1"/>
+        <local:Americano x:Name="Black" Tag="t" MouseDown="Drink_MouseDown" Drink="kisspng-coffee-tea-cappuccino-cafe-deciliter-black-coffee-5a993d3cd60264.4841130515199921248766.png" NameCoffee="Black" Margin="7,120,136,119" Uid="4" Grid.Row="1"/>
+        <local:Americano x:Name="Moc" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Mocaccino" Drink="IMGBIN_coffee-latte-espresso-cafe-flat-white-png_fL9ULZAB.png" Margin="7,47,136,192" Type="MilkCoffee" Uid="2" Grid.Row="1"/>
+        <local:Americano x:Name="Ame" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Americano" Drink="IMGBIN_white-coffee-caffè-americano-espresso-tea-png_8Yatd3ht.png" OverridesDefaultStyle="True" Margin="7,98,136,270" Uid="0" Grid.RowSpan="2"/>
+        <local:Americano x:Name="Cap" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Cappuccino" Drink="pngegg.png" Margin="133,98,10,270" Type="MilkCoffee" Uid="1" Grid.RowSpan="2" />
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="7,47,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="10" Grid.Row="1" />
+        <local:Americano  HorizontalAlignment="Left" Height="67" Margin="7,98,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="8" Grid.RowSpan="2" />
+        <local:Americano  HorizontalAlignment="Left" Height="67" Margin="133,98,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="9" Grid.RowSpan="2" />
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="7,120,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="12" Grid.Row="1" />
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="133,47,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="11" Grid.Row="1" />
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="133,120,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="13" Grid.Row="1" />
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="7,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="14" Grid.Row="1" />
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="133,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="15" Grid.Row="1" />
+        <Rectangle x:Name="rar" HorizontalAlignment="Left" Height="28" Margin="133,271,0,0" RadiusY="15" RadiusX="15" Stroke="White" VerticalAlignment="Top" Width="95" MouseEnter="rar_MouseEnter" MouseLeave="rar_MouseLeave" MouseDown="rar_MouseDown" Grid.Row="1">
             <Rectangle.Fill>
                 <SolidColorBrush x:Name="scb" Color="#33FFFFFF"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="lar" HorizontalAlignment="Left" Height="28" Margin="7,345,0,0" RadiusY="15" RadiusX="15" Stroke="White" VerticalAlignment="Top" Width="95" MouseEnter="rar_MouseEnter" MouseLeave="rar_MouseLeave" MouseDown="rar_MouseDown">
+        <Rectangle x:Name="lar" HorizontalAlignment="Left" Height="28" Margin="4,271,0,0" RadiusY="15" RadiusX="15" Stroke="White" VerticalAlignment="Top" Width="95" MouseEnter="rar_MouseEnter" MouseLeave="rar_MouseLeave" MouseDown="rar_MouseDown" Grid.Row="1">
             <Rectangle.Fill>
                 <SolidColorBrush x:Name="scb2" Color="#33FFFFFF"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="rg"  Content="&gt;" HorizontalAlignment="Left" Margin="173,335,0,0" VerticalAlignment="Top" FontSize="24" Foreground="#FF2BB901" Panel.ZIndex="-1"/>
-        <Label x:Name="lt"  Content="&lt;" HorizontalAlignment="Left" Margin="39,335,0,0" VerticalAlignment="Top" FontSize="24" Foreground="#FFC7C9C6" Panel.ZIndex="-1"/>
-        <Button x:Name="stop" Visibility="Collapsed" Content="Stop Maintenance" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="218" Height="34" FontSize="18" Background="#FFDA6262" Foreground="White" Click="stop_Click" BorderBrush="Black"/>
+        <Label x:Name="rg"  Content="&gt;" HorizontalAlignment="Left" Margin="170,261,0,0" VerticalAlignment="Top" FontSize="24" Foreground="#FF2BB901" Panel.ZIndex="-1" Grid.Row="1"/>
+        <Label x:Name="lt"  Content="&lt;" HorizontalAlignment="Left" Margin="36,261,0,0" VerticalAlignment="Top" FontSize="24" Foreground="#FFC7C9C6" Panel.ZIndex="-1" Grid.Row="1"/>
+        <Button x:Name="stop" Visibility="Collapsed" Content="Stop Maintenance" HorizontalAlignment="Left" Margin="7,50,0,39" Width="218" FontSize="13" Background="#FFDA6262" Foreground="White" Click="stop_Click" BorderBrush="Black"/>
+        <Button x:Name="load" Visibility="Collapsed" Content="Load" HorizontalAlignment="Left" Margin="7,50,0,39" Width="52" FontSize="18" Background="#FFDC5A49" Foreground="White"  BorderBrush="Black" Click="load_Click"/>
+        <Button x:Name="save" Visibility="Collapsed" Content="Save" HorizontalAlignment="Left" Margin="173,50,0,39" Width="52" FontSize="18" Background="#FFDC5D49" Foreground="White" Click="load_Click"  BorderBrush="Black"/>
+
+
     </Grid>
 </UserControl>
