@@ -22,14 +22,14 @@
         <local:Americano x:Name="Moc" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Mocaccino" Drink="IMGBIN_coffee-latte-espresso-cafe-flat-white-png_fL9ULZAB.png" Margin="7,47,136,192" Type="MilkCoffee" Uid="2" Grid.Row="1"/>
         <local:Americano x:Name="Ame" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Americano" Drink="IMGBIN_white-coffee-caffè-americano-espresso-tea-png_8Yatd3ht.png" OverridesDefaultStyle="True" Margin="7,98,136,270" Uid="0" Grid.RowSpan="2"/>
         <local:Americano x:Name="Cap" Tag="t" MouseDown="Drink_MouseDown" NameCoffee="Cappuccino" Drink="pngegg.png" Margin="133,98,10,270" Type="MilkCoffee" Uid="1" Grid.RowSpan="2" />
-        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="7,47,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="10" Grid.Row="1" />
-        <local:Americano  HorizontalAlignment="Left" Height="67" Margin="7,98,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="8" Grid.RowSpan="2" />
-        <local:Americano  HorizontalAlignment="Left" Height="67" Margin="133,98,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="9" Grid.RowSpan="2" />
-        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="7,120,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="12" Grid.Row="1" />
-        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="133,47,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="11" Grid.Row="1" />
-        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="133,120,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="13" Grid.Row="1" />
-        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="7,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="14" Grid.Row="1" />
-        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="133,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="15" Grid.Row="1" />
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="7,47,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="10" Grid.Row="1" Ready="False"/>
+        <local:Americano  HorizontalAlignment="Left" Height="67" Margin="7,98,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="8" Grid.RowSpan="2" Ready="False"/>
+        <local:Americano  HorizontalAlignment="Left" Height="67" Margin="133,98,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="9" Grid.RowSpan="2" Ready="False"/>
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="7,120,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="12" Grid.Row="1" Ready="False"/>
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="133,47,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="11" Grid.Row="1" Ready="False"/>
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="133,120,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="13" Grid.Row="1" Ready="False"/>
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="7,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="14" Grid.Row="1" Ready="False"/>
+        <local:Americano  HorizontalAlignment="Left" Height="68" Margin="133,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed " Tag = "t" MouseDown="Drink_MouseDown" Uid="15" Grid.Row="1" Ready="False"/>
         <Rectangle x:Name="rar" HorizontalAlignment="Left" Height="28" Margin="133,271,0,0" RadiusY="15" RadiusX="15" Stroke="White" VerticalAlignment="Top" Width="95" MouseEnter="rar_MouseEnter" MouseLeave="rar_MouseLeave" MouseDown="rar_MouseDown" Grid.Row="1">
             <Rectangle.Fill>
                 <SolidColorBrush x:Name="scb" Color="#33FFFFFF"/>

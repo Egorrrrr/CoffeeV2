@@ -20,7 +20,7 @@
         <Rectangle Fill="#00F4F4F5" HorizontalAlignment="Left" Height="65" Margin="5,182,0,0" Stroke="Black" VerticalAlignment="Top" Width="347" Panel.ZIndex="-1" />
         <Rectangle Fill="#00F4F4F5" HorizontalAlignment="Left" Height="65" Margin="5,103,0,0" Stroke="Black" VerticalAlignment="Top" Width="347" Panel.ZIndex="-1"/>
         <Rectangle Fill="#00F4F4F5" HorizontalAlignment="Left" Height="65" Margin="5,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="347" Panel.ZIndex="-1">
-         
+
         </Rectangle>
         <Button Content="..." HorizontalAlignment="Left" Margin="245,210,0,0" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.5,0.5" Height="22" Click="Button_Click">
             <Button.RenderTransform>
@@ -34,7 +34,7 @@
         </Button>
         <Button x:Name="ri" Content=">" HorizontalAlignment="Left" Margin="290,291,0,0" VerticalAlignment="Top" Width="45" Height="26" Click="Button_Click_1"/>
         <Button x:Name="le" Content="&lt;" HorizontalAlignment="Left" Margin="79,291,0,0" VerticalAlignment="Top" Width="45" Height="26"  Click="Button_Click_1"/>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="79,352,0,0" VerticalAlignment="Top" Width="206" Height="57" FontSize="20" Click="Button_Click_2"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="79,358,0,0" VerticalAlignment="Top" Width="206" Height="56" FontSize="20" Click="Button_Click_2"/>
         <Rectangle x:Name="clr" Visibility="Collapsed"  HorizontalAlignment="Left" Height="17" Margin="129,269,0,0" RadiusY="5" RadiusX="5" Stroke="#00000000" VerticalAlignment="Top" Width="156">
             <Rectangle.Fill>
                 <SolidColorBrush x:Name="cc" Color="#FF7E4F20"/>
@@ -50,6 +50,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <CheckBox x:Name="Avl" Content="Доступен" HorizontalAlignment="Left" Margin="5,332,0,0" VerticalAlignment="Top" Height="16" Width="112" Foreground="#FF01C10A"/>
 
     </Grid>
 </Window>

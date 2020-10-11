@@ -117,7 +117,8 @@ namespace CoffeeV2
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (!act)
+            if (!Ready) return;
+            if (!act )
             {
                 ColorAnimation ca = new ColorAnimation();
                 ca.From = scb.Color;
@@ -131,7 +132,8 @@ namespace CoffeeV2
 
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
         {
-            if (!act)
+            if (!Ready) return;
+            if (!act )
             {
                 ColorAnimation ca = new ColorAnimation();
                 ca.From = scb.Color;
@@ -176,6 +178,19 @@ namespace CoffeeV2
                 SetValue(AcitveProperty, value); 
             }
         }
+
+
+        public bool Ready
+        {
+            get { return (bool)GetValue(ReadyProperty); }
+            set { SetValue(ReadyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Ready.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ReadyProperty =
+            DependencyProperty.Register("Ready", typeof(bool), typeof(Americano), new PropertyMetadata(true));
+
+
 
         // Using a DependencyProperty as the backing store for Acitve.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty AcitveProperty =

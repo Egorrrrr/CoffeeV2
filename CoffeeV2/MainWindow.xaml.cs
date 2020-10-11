@@ -202,7 +202,11 @@ namespace CoffeeV2
             
             if (!chb.Commenced && (mainc.Balance >= mainc.Asked) && !chb.CoffeePrepared && !panelc.mtn && changetaken)
             {
-                
+                if(chosen == null)
+                {
+                    msg.Content = "Напиток не\nвыбран";
+                    return;
+                }
                 msg.Content = "";
                 switch (mainc.Type)
                 {
@@ -230,6 +234,7 @@ namespace CoffeeV2
                             cfe.Prepare(chb);
                             break;
                         }
+           
 
                 }
                 

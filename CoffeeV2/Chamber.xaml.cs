@@ -146,8 +146,10 @@ namespace CoffeeV2
                 enlargeh.From = Coffee.Height;
                 enlargew.To = Coffee.Width / 1.5;
                 enlargeh.To = Coffee.Height / 1.5;
-                Coffee.BeginAnimation(Path.HeightProperty, enlargeh);
-                Coffee.BeginAnimation(Path.WidthProperty, enlargew);
+                Coffee.BeginAnimation(Path.HeightProperty, null);
+                Coffee.BeginAnimation(Path.WidthProperty, null);
+                //Coffee.Height /= 1.5;
+                //Coffee.Width /= 1.5;   
                 liquid.Height = 0;
                 ColorAnimation ca = new ColorAnimation();
                 ca.From = ccolor;
@@ -156,7 +158,8 @@ namespace CoffeeV2
                 SolidColorBrush sb = clr;
                 othercolor = Colors.Transparent;
                 ccolor = Colors.Transparent; 
-                clr.BeginAnimation(SolidColorBrush.ColorProperty, ca);
+                clr.BeginAnimation(SolidColorBrush.ColorProperty, null);
+                clr.Color = Colors.Transparent;
                 if (Taken != null)
                 {
                     Taken(this, EventArgs.Empty);

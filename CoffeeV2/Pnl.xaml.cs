@@ -37,6 +37,7 @@ namespace CoffeeV2
         public byte ColorG { get; set; }
         public byte ColorB { get; set; }
         public string Id { get; set; } 
+        public bool Rdy { get; set; }
     }
     
     public partial class Pnl : UserControl
@@ -73,6 +74,7 @@ namespace CoffeeV2
                 set.ColorB = item.ColorChoice.B;
                 set.Type = item.Type;
                 set.Price = item.Price;
+                set.Rdy = item.Ready;
                 try
                 {
                     if (item.drnk.Source.ToString() != null)
@@ -122,6 +124,7 @@ namespace CoffeeV2
                             if (item.Img != "")
                                 temp.Drink = new BitmapImage(new Uri(item.Img));
                             temp.Type = item.Type;
+                            temp.Ready = item.Rdy;
                         }
                     }
                 }
@@ -270,12 +273,14 @@ namespace CoffeeV2
                 form.pic.Source = a.Drink;
                 form.type.Text = a.Type.ToString();
                 form.cc.Color = a.ColorChoice;
+                form.Avl.IsChecked = a.Ready;
                 form.ShowDialog();
                 a.Price = double.Parse(form.price.Text);
                 a.NameCoffee = form.name.Text;
                 a.Drink = form.pic.Source;
                 a.Type = (TypeC)Enum.Parse(typeof(TypeC), form.type.Text);
                 a.ColorChoice = form.cc.Color;
+                a.Ready = (bool)form.Avl.IsChecked;
 
 
                 return;
