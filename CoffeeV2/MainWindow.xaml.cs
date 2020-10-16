@@ -13,6 +13,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using CoffeeV2;
 using System.Timers;
 using Microsoft.Win32;
@@ -50,6 +51,11 @@ namespace CoffeeV2
         private void ChoiceEvt(object sender, EventArgs e)
         {
             chosen = (Americano)sender;
+            if (!chosen.Ready)
+            {
+                chosen.Acitve = false;
+                return;
+            }
             Choice.Content = "Напиток:\n" + chosen.NameCoffee;
             mainc.Asked = chosen.Price;
             mainc.Type = chosen.Type;
@@ -63,8 +69,39 @@ namespace CoffeeV2
                 Sugar.Content = "Сахар: ";
                 
             }
+            FullFill();
             
         }
+        List<IDrink> drinks = new List<IDrink>();
+        IDrink drkn; 
+        void FullFill()
+        {
+            //for (int i = 0; i < 16; i++)
+            //{
+            //Americano a = panelc.GetById(i.ToString());
+            switch (chosen.Type)
+            {
+                case TypeC.Coffee:
+                    Coffee cfe = new Coffee(chosen.NameCoffee, false, mainc.Sugar, Color.FromArgb(255, 92, 56, 4));
+                    drkn = cfe;
+                    break;
+                case TypeC.MilkCoffee:
+                    Coffee cfemikl = new Coffee(chosen.NameCoffee, true, mainc.Sugar, Color.FromArgb(255, 92, 56, 4));
+                    drkn = cfemikl;
+                    break;
+                case TypeC.Tea:
+                    Tea tea = new Tea(chosen.NameCoffee, mainc.Sugar, Color.FromArgb(255, 194, 137, 52));
+                    drkn = tea;
+                    break;
+                case TypeC.Other:
+                    Other other = new Other(chosen.NameCoffee, chosen, Color.FromArgb(255, 173, 171, 168));
+                    drkn = other;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
@@ -195,6 +232,7 @@ namespace CoffeeV2
             Sugar.Content = "Без сахара";
             sld.IsEnabled = !a;
             sugarlocked = a;
+           
             
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -208,35 +246,36 @@ namespace CoffeeV2
                     return;
                 }
                 msg.Content = "";
-                switch (mainc.Type)
-                {
-                    case TypeC.Tea:
-                        {
-                            Tea tea = new Tea(chosen.NameCoffee, mainc.Sugar, Color.FromArgb(255, 194, 137, 52));
-                            tea.Prepare(chb);
-                            break;
-                        }
-                    case TypeC.Other:
-                        {
-                            Other other = new Other(chosen.NameCoffee, chosen, Color.FromArgb(255, 173, 171, 168));
-                            other.Prepare(chb);
-                            break;
-                        }
-                    case TypeC.Coffee:
-                        {
-                            Coffee cfe = new Coffee(chosen.NameCoffee, false,  mainc.Sugar, Color.FromArgb( 255, 92, 56, 4));
-                            cfe.Prepare(chb);
-                            break;
-                        }
-                    case TypeC.MilkCoffee:
-                        {
-                            Coffee cfe = new Coffee(chosen.NameCoffee, true, mainc.Sugar, Color.FromArgb(255, 92, 56, 4));
-                            cfe.Prepare(chb);
-                            break;
-                        }
-           
+                //switch (mainc.Type)
+                //{
+                //    case TypeC.Tea:
+                //        {
+                //            Tea tea = new Tea(chosen.NameCoffee, mainc.Sugar, Color.FromArgb(255, 194, 137, 52));
+                //            tea.Prepare(chb);
+                //            break;
+                //        }
+                //    case TypeC.Other:
+                //        {
+                //            Other other = new Other(chosen.NameCoffee, chosen, Color.FromArgb(255, 173, 171, 168));
+                //            other.Prepare(chb);
+                //            break;
+                //        }
+                //    case TypeC.Coffee:
+                //        {
+                //            Coffee cfe = new Coffee(chosen.NameCoffee, false,  mainc.Sugar, Color.FromArgb( 255, 92, 56, 4));
+                //            cfe.Prepare(chb);
+                //            break;
+                //        }
+                //    case TypeC.MilkCoffee:
+                //        {
+                //            Coffee cfe = new Coffee(chosen.NameCoffee, true, mainc.Sugar, Color.FromArgb(255, 92, 56, 4));
+                //            cfe.Prepare(chb);
+                //            break;
+                //        }
 
-                }
+
+                //}
+                drkn.Prepare(chb);
                 
                 cook.Content = "В процессе...";
                 cancel.Visibility = Visibility.Visible;

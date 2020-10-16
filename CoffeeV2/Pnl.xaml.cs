@@ -210,6 +210,7 @@ namespace CoffeeV2
             ca.Duration = TimeSpan.FromMilliseconds(200);
             tmp2.BeginAnimation(SolidColorBrush.ColorProperty, ca);
             
+            
         }
 
         private void rar_MouseDown(object sender, MouseButtonEventArgs e)
@@ -261,10 +262,22 @@ namespace CoffeeV2
             }
 
         }
+        public Americano GetById(string id)
+        {
+            foreach (var item in FindVisualChildren<Americano>(uc))
+            {
+                if(item.Uid == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
 
         private void Drink_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Americano a = (Americano)sender;
+   
             if (mtn)
             {
                 Settigns form = new Settigns();

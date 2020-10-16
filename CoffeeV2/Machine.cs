@@ -17,6 +17,7 @@ namespace CoffeeV2
         public string name;
         public int sugar;
         public Color CupColor;
+        
 
     }
    
@@ -89,7 +90,7 @@ namespace CoffeeV2
     class Machine :ICoffeeNes
     {
         
-
+        
 
         private double balance;
         public double Balance
