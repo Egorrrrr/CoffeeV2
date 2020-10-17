@@ -72,13 +72,10 @@ namespace CoffeeV2
             FullFill();
             
         }
-        List<IDrink> drinks = new List<IDrink>();
         IDrink drkn; 
         void FullFill()
         {
-            //for (int i = 0; i < 16; i++)
-            //{
-            //Americano a = panelc.GetById(i.ToString());
+            
             switch (chosen.Type)
             {
                 case TypeC.Coffee:
@@ -102,7 +99,7 @@ namespace CoffeeV2
             }
         }
 
-        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+        private static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
             {
@@ -160,7 +157,7 @@ namespace CoffeeV2
         {
             Upd();
         }
-        public void Upd()
+        private void Upd()
         {
             blnce.Content = "Кредит: ";
             blnce.Content += mainc.Balance + "р.";
@@ -246,35 +243,7 @@ namespace CoffeeV2
                     return;
                 }
                 msg.Content = "";
-                //switch (mainc.Type)
-                //{
-                //    case TypeC.Tea:
-                //        {
-                //            Tea tea = new Tea(chosen.NameCoffee, mainc.Sugar, Color.FromArgb(255, 194, 137, 52));
-                //            tea.Prepare(chb);
-                //            break;
-                //        }
-                //    case TypeC.Other:
-                //        {
-                //            Other other = new Other(chosen.NameCoffee, chosen, Color.FromArgb(255, 173, 171, 168));
-                //            other.Prepare(chb);
-                //            break;
-                //        }
-                //    case TypeC.Coffee:
-                //        {
-                //            Coffee cfe = new Coffee(chosen.NameCoffee, false,  mainc.Sugar, Color.FromArgb( 255, 92, 56, 4));
-                //            cfe.Prepare(chb);
-                //            break;
-                //        }
-                //    case TypeC.MilkCoffee:
-                //        {
-                //            Coffee cfe = new Coffee(chosen.NameCoffee, true, mainc.Sugar, Color.FromArgb(255, 92, 56, 4));
-                //            cfe.Prepare(chb);
-                //            break;
-                //        }
-
-
-                //}
+                
                 drkn.Prepare(chb);
                 
                 cook.Content = "В процессе...";
