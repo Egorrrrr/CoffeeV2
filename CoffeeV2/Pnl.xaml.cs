@@ -45,6 +45,18 @@ namespace CoffeeV2
         List<Sets> sets;
         bool page = true;
         public bool mtn = false;
+        public Pnl()
+        {
+            InitializeComponent();
+            Amr.Name = "dsds";
+            sets = new List<Sets>();
+            sfd.FileOk += FileSaveOK;
+            dial.FileOk += FileLoadOK;
+
+
+        }
+        SaveFileDialog sfd = new SaveFileDialog();
+        OpenFileDialog dial = new OpenFileDialog();
         public void Maintenance()
         {
             foreach (var item in FindVisualChildren<Americano>(uc))
@@ -60,14 +72,13 @@ namespace CoffeeV2
             save.Visibility = Visibility.Visible;
             
         }
-        public void Save()
+        private void FileSaveOK(object sender, EventArgs e)
         {
-        
             foreach (var item in FindVisualChildren<Americano>(uc))
             {
                 Sets set = new Sets();
                 set.Id = item.Uid;
-               
+
                 set.Name = item.NameCoffee;
                 set.ColorR = item.ColorChoice.R;
                 set.ColorG = item.ColorChoice.G;
@@ -75,66 +86,46 @@ namespace CoffeeV2
                 set.Type = item.Type;
                 set.Price = item.Price;
                 set.Rdy = item.Ready;
-                try
-                {
-                    if (item.drnk.Source.ToString() != null)
-                        set.Img = item.drnk.Source.ToString();
-                }
-                catch (Exception)
-                {
-                    set.Img = "";
-                }
+                if (item.drnk.Source != null)
+                    set.Img = item.drnk.Source.ToString();
+
+
                 sets.Add(set);
 
             }
-            try
-            {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.ShowDialog();
-                if (sfd.FileName == "") return;
-                Stream st = File.Open(sfd.FileName, FileMode.Create);
-                BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(st, sets);
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show("Error: " + e.Message);
-
-            }
+            if (sfd.FileName == "") return;
+            Stream st = File.Open(sfd.FileName, FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(st, sets);
+            
+            
         }
-        public void Load()
+        private void FileLoadOK(object sender, EventArgs e)
         {
-            OpenFileDialog dial = new OpenFileDialog();
-            dial.ShowDialog();
-            if (dial.FileName == "") return;
-            try
+
+            Stream st = File.OpenRead(dial.FileName);
+            BinaryFormatter bf = new BinaryFormatter();
+            List<Sets> tmp = bf.Deserialize(st) as List<Sets>;
+            foreach (var item in tmp)
             {
-                Stream st = File.OpenRead(dial.FileName);
-                BinaryFormatter bf = new BinaryFormatter();
-                List<Sets> tmp = bf.Deserialize(st) as List<Sets>;
-                foreach (var item in tmp)
+                foreach (var temp in FindVisualChildren<Americano>(uc))
                 {
-                    foreach (var temp in FindVisualChildren<Americano>(uc))
+                    if (temp.Uid == item.Id)
                     {
-                        if (temp.Uid == item.Id)
-                        {
-                            temp.NameCoffee = item.Name;
-                            temp.Price = item.Price;
-                            temp.ColorChoice = Color.FromRgb(item.ColorR, item.ColorG, item.ColorB);
-                            if (item.Img != "")
-                                temp.Drink = new BitmapImage(new Uri(item.Img));
-                            temp.Type = item.Type;
-                            temp.Ready = item.Rdy;
-                        }
+                        temp.NameCoffee = item.Name;
+                        temp.Price = item.Price;
+                        temp.ColorChoice = Color.FromRgb(item.ColorR, item.ColorG, item.ColorB);
+                        if (item.Img != "")
+                            temp.Drink = new BitmapImage(new Uri(item.Img));
+                        temp.Type = item.Type;
+                        temp.Ready = item.Rdy;
                     }
                 }
+            }
 
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error: " + e.Message);
-            }
+
         }
+       
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
@@ -154,13 +145,7 @@ namespace CoffeeV2
                 }
             }
         }
-        public Pnl()
-        {
-            InitializeComponent();
-            Amr.Name = "dsds";
-            sets = new List<Sets>();
-            
-        }
+        
 
        
 
@@ -331,8 +316,8 @@ namespace CoffeeV2
         private void load_Click(object sender, RoutedEventArgs e)
         {
             Button s = (Button)sender;
-            if (s.Name == "load") Load();
-            else Save();
+            if (s.Name == "load") dial.ShowDialog();
+            else sfd.ShowDialog();
         }
     }
 }
